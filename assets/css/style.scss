@@ -22,10 +22,10 @@ body {
   
   .button {
     border: 1px solid #1E562A;
-    background: linear-gradient(#2E8540, #3DB156);
+    background: linear-gradient(#3DB156, #2E8540);
     
     &:hover {
-      background: linear-gradient(#2E8540, #2E8540);
+      background: linear-gradient(#3DB156, #3DB156);
       background-color: #5DC774;
     }
   }
