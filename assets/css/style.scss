@@ -18,4 +18,13 @@ body {
 
 #banner {
   background: #2E8540;
+  border: #226430;
+  
+  .button {
+    border: 1px solid #1E562A;
+    background: linear-gradient(#2E8540, #3DB156);
+    
+    &:hover {
+      background: linear-gradient(#2E8540, #2E8540);
+      background-color: #5DC774;
 }
