@@ -1,6 +1,8 @@
 ---
 ---
-$color-brand: #1F3F6A;
+
 @import "{{ site.theme }}";
 // Colors
-
+.header-container-wrapper {
+  background-color: #1F3F6A
+}
