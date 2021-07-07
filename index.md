@@ -1,6 +1,4 @@
-# Introduction to NCBI Cloud Computing
-
-## Objective 0 - Logging in & Navigating the AWS Console Page
+# Objective 0 - Logging in & Navigating the AWS Console Page
 
 1) Find your credential email with subject: **NCBI Codethon Credentials**
 
@@ -24,9 +22,9 @@
 > **NOTE:** This login method is unique to the workshop. If you want to create your own account after the workshop, visit the link below and follow the steps:
 > https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
 
-## Objective 1 - Search for the sequence reads deposited into NCBI's SRA database using AWS Athena
+# Objective 1 - Search for the sequence reads deposited into NCBI's SRA database using AWS Athena
 
-### Creating an S3 Bucket
+## Creating an S3 Bucket
 
 Before we can use Athena, we need to make an S3 bucket that we can save our results to as we search the SRA metadata tables. So, let's go make one!
 
@@ -59,4 +57,4 @@ Before we can use Athena, we need to make an S3 bucket that we can save our resu
 
 Now that we have an S3 bucket ready, we can go see what the Athen page looks like!
 
-### Navigating to Athena
+## Navigating to Athena
