@@ -1,3 +1,5 @@
+# Introduction to NCBI Cloud Computing
+
 ## Objective 0 - Logging in & Navigating the AWS Console Page
 
 1) Find your credential email with subject: **NCBI Codethon Credentials**
