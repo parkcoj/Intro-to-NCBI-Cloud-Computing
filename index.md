@@ -2,7 +2,7 @@
 
 1) Find your credential email with subject: **NCBI Codethon Credentials**
 
-![img1](https://github.com/parkcoj/Intro-to-NCBI-cloud-computing/blob/main/doc_images/img1.jpg)
+![img1](doc_images/img1.jpg)
 
 2) Navigate to https://codeathon.ncbi.nlm.nih.gov and login using the credentials from the email *(left image)* and create a new passwrod after logging in *(right image)*
 
