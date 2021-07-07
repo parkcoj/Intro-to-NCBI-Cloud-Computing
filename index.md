@@ -20,7 +20,7 @@
 > **NOTE:** If you are logged out or get kicked out of the console, simply return to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and log in again (remember your newly created password!) to get back to the console home page.
 
 > **NOTE:** This login method is unique to the workshop. If you want to create your own account after the workshop, visit the link below and follow the steps:
-> https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
+> [https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 
 # Objective 1 - Search for the sequence reads deposited into NCBI's SRA database using AWS Athena
 
