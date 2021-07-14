@@ -39,3 +39,14 @@ strong {
   font-weight: bolder;
   color:#080808;
 }
+
+blockquote {
+  border-left:1px solid #2E8540;
+  margin:0;
+  padding:0 0 0 20px;
+  font-style:italic;
+}
+
+ul{
+  list-style-image:url('images/bullet.png');
+}
