@@ -269,8 +269,8 @@ sudo ./aws/install
 ## Mapping Reads with MagicBLAST
 
 We can (finally) run MagicBLAST to align some reads! We just need two pieces of information to run the program.  
-A.	The reference sequence – Solved with Step 1  
-B.	The accession numbers for our reads – Solved with Step 2
+A.	The reference sequence – _Will be solved with Step 1 below_  
+B.	The accession numbers for our reads – _Will be solved with Step 2 below_
 
 1)	Based on the information from the manuscript, we know that the deleted region in the genome is on Chromosome 7. In NCBI, the accession number for this sequence is **NC_000007** so we can download this sequence to our remote computer and use it as the reference sequence for our alignment. Download the sequence using the following command.
 
@@ -304,7 +304,7 @@ mkdir results && mv SRR* results/
 
 6) Finally, we need to move these results files to our S3 bucket so we can access them outside of our AWS account. Run the following AWS CLI command to copy the files to your S3 bucket.  
 
-> **NOTE:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name
+> **REMEMBER:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name
 
 ```bash
 aws s3 sync results/ s3://<username>-cloud-workshop
