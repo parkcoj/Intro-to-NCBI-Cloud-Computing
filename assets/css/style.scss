@@ -15,6 +15,7 @@ header {
 
 body {
   background: #DFDFE1;
+  color:#080808;
   font-weight:400;
 }
 
@@ -32,4 +33,8 @@ body {
       background-color: #5DC774;
     }
   }
+}
+
+strong {
+  font-weight: bolder;
 }
