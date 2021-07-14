@@ -82,3 +82,60 @@ Now that we have an S3 bucket ready, we can go see what the Athen page looks lik
 Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
 
 > For the detailed instructions on using AWS Glue to add a table to Athena, visit the Supplementary Text (section: **Instructions for AWS Glue**)!
+
+## Exploring Athena Tables
+
+These steps aren't necessary to do before every Athena query, but they are useful when exploring a new table.
+
+1) Click the dropdown menu underneath the **Database** section and click **sra** to set it as the active database. If you do not see this as an option, refresh the page and check again.
+
+![img17](doc_images/img17.jpg)
+
+2) Look at the **Tables** section and click the ellipses next to the **metadata** table, then click **Preview Table** to automatically run a sample command which will give you 10 random lines from the table
+
+![img18](doc_images/img18.jpg)
+
+> For SRA based tables, you can also visit the following link to get the definition of each column in the table: [https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/)
+
+## Querying Our Dataset
+
+1) The following link is the actual publication for our case study today. Scroll to the very bottom and find the **Data Availability** section: [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5778042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5778042/)
+
+![img19](doc_images/img19.jpg)
+
+> You can also use the SRA Run Selector on the NCBI website to download data from NCBI directly to your S3 bucket! Find more information and a tutorial here:  
+> [https://www.ncbi.nlm.nih.gov/sra/docs/data-delivery/](https://www.ncbi.nlm.nih.gov/sra/docs/data-delivery/)
+
+2) The paper stored the data we need under and ID **SRP125431**, but we don't know exactly which column that is associated with. So, scroll through the preview table we made earlier to find a column filled with similar values.
+
+![img20](doc_images/img20.jpg)
+
+> The **Preview Table** query we used to make this example pulls random lines from the table, so the values within your table may look different from this screenshot. The important info for us is that each value in this **sra_study** column starts with **"SRP"**
+
+3) Now that we know which column to query for our data (sra_study), we can build the Athena query. Look to the panel where we enter our Athena queries. Click **New Query 1** to navigate back to the empty panel so we can write our own query.
+
+![img21](doc_images/img21.jpg)
+
+> Fun fact: If you navigate back to **New Query 2** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
+
+4) Type the following command (circled in yellow) into your empty query space, then click the blue **Run Query** button (circled in red).
+
+![img22](doc_images/img22.jpg)
+
+5) If you see a results table with three rows like the partial screenshot below, you have successfully found your data!
+
+![img23](doc_images/img23.jpg)
+
+6) Click the **Download to CSV** button on the top-right corner of the results panel to download your file to your computer. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.
+
+![img24](doc_images/img24.jpg)
+
+> Want to challenge yourself? Visit the supplementary text (section: **SQL challenges**) to find some questions you can build your own SQL query for. Plus, find more advanced SQL query techniques and a deeper breakdown of the SRA metadata table too!
+
+# Objective 2 - Aligning Sequence Reads using AWS EC2 & MagicBLAST
+
+## Launching an EC2 Instance
+
+1) Use the search ar at the top of the console page to search for **EC2** and click on the first result
+
+![img25](doc_images/img25.jpg)
