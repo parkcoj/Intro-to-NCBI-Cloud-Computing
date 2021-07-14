@@ -4,7 +4,7 @@
 
 ![img1](doc_images/img1.jpg)
 
-2) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials from the email *(left image)* and create a new passwrod after logging in *(right image)*
+2) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials from the email *(left image)* and create a new password after logging in *(right image)*
 
 ![img2](doc_images/img2.jpg)
 
@@ -58,3 +58,27 @@ Before we can use Athena, we need to make an S3 bucket that we can save our resu
 Now that we have an S3 bucket ready, we can go see what the Athen page looks like!
 
 ## Navigating to Athena
+
+1) Use the search bar at the top of the console page to search for **Athena** and click on the first result
+
+![img11](doc_images/img11.jpg)
+
+2) Visiting the Athena page should prompt you with a few notifications at the top of the page. you can just click the little "X" and disregard the first two.
+
+![img12](doc_images/img12.jpg)
+
+3) The third notification is actually very important .We need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click **Settings** in the top right of the screen
+
+![img13](doc_images/img13.jpg)
+
+4) Click the folder button that says **Select** *(top image)* and scroll down to find your newly created S3 bucket. Then click the black arrow button to select it and the blue **Select** button to add it *(middle image)*. Finally, click **Save** *(bottom image)*.
+
+![img14](doc_images/img14.jpg)
+
+![img15](doc_images/img15.jpg)
+
+![img16](doc_images/img16.jpg)
+
+Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
+
+```For the detailed instructions on using AWS Glue to add a table to Athena, visit the Supplementary Text (section: **Instructions for AWS Glue**)!```
