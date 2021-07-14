@@ -229,6 +229,8 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 20) On the launcher page, click **Connect** in the bottom right. This will launch a new tab in your browser and connect you to your remote computer!
 
+![img49](doc_images/img49.jpg)
+
 ## Installing Software
 
 Before we can do our analyses, we need to install some software into our new remote computer
@@ -280,7 +282,7 @@ curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nu
 
 2) Our Athena query gave us three different accession numbers that could be the child’s sequence data. To find out which one is associated with the child, scroll through the columns to find one that distinguishes each accession (_hint: it’s the library_name column_). It looks like **SRR6314034** is the ID we want!
 
-![img49](doc_images/img49.jpg)
+![img50](doc_images/img50.jpg)
 
 3) To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.
 
@@ -310,4 +312,150 @@ mkdir results && mv SRR* results/
 aws s3 sync results/ s3://<username>-cloud-workshop
 ```
 
+7)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.
 
+
+8)	In the console webpage, click the blue **Instances** button at the top of the instance launcher page
+
+![img51](doc_images/img51.jpg)
+
+9) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
+
+![img52](doc_images/img52.jpg)
+
+![img53](doc_images/img53.jpg)
+
+10) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) _(top image)_ and click on your bucket name _(bottom image)_ to see its contents
+
+![img54](doc_images/img54.jpg)
+
+![img55](doc_images/img55.jpg)
+
+11) You should have four files in your bucket. We need the files that end in **.bam** and **.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
+
+![img56](doc_images/img56.jpg)
+
+![img57](doc_images/img57.jpg)
+
+12) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
+
+![img59](doc_images/img59.jpg)
+
+13) If it works, you will see a green banner at the top of the new page like seen below _(top image)_. If you see this, click your bucket link under the “summary” panel _(bottom image)_ to navigate back to the main bucket page.
+
+![img60](doc_images/img60.jpg)
+
+![img62](doc_images/img62.jpg)
+
+# Objective 3 - Visualize Read Alignments Using Genome Data Viewer
+
+## Importing Our Data
+
+1)	Open a new tab in your web browser and go to [https://ncbi.nlm.nih.gov/genome/gdv/](https://ncbi.nlm.nih.gov/genome/gdv/)
+
+2)	Make sure the **Human** is selected from the tree on the left
+
+![img63](doc_images/img63.jpg)
+
+3)	Scroll to the bottom of the page and click on the 7th Chromosome image to load the Genome Data Viewer on the human reference genome’s 7th chromosome
+
+![img64](doc_images/img64.jpg)
+
+4)	The GDV page comes pre-loaded with several tracks aligned against the chromosome. Most of these are not useful to us today, so we can use the red X buttons in the top right corner of each track to delete them. Do this for every track **except the top one**. This top track shows every gene and its position on the chromosome.
+
+![img65](doc_images/img65.jpg)
+
+> There are LOTS of NCBI-offered tracks you can upload ato compare against your own data. To learn more about them click the little gear at the bottom of the viewer page:  
+> ![img66](doc_images/img66.jpg)
+
+5) Now we can add our own tracks to the viewer. Click on **User Data and Track Hubs** on the left side of the screen
+
+![img67](doc_images/img67.jpg)
+
+6) Click the **Options** pulldown menu and click **Add Remote Files...** 
+
+![img68](doc_images/img68.jpg)
+
+7)	Navigate back to your S3 bucket tab and click on the **SRR6314034.sorted.bam** file to open up the details for the file
+
+![img70](doc_images/img70.jpg)
+
+8) On the new page, click the "Copy" button next to the **Object URL** to copy the URL path to the file to your clipboard
+
+![img71](doc_images/img71.jpg)
+
+9) Go back to your GDV tab and paste the link into the URL box. Next, add a familiar name like `Child` to the **Name** box to help us identify the track later. Then click **Add**
+
+![img72](doc_images/img72.jpg)
+
+10) This track is showing all of the results of magicBLAST in a “pile-up” view. This is basically one long histogram plot where a taller bar represents a region of the chromosome where more reads from the sample aligned to. Because our sequences are specific to a single gene in the chromosome, but our current view is showing the entire chromosome, the pile-up view may look a little bland.  
+Try to find the region of the chromosome that our reads aligned to:
+
+![img73](doc_images/img73.jpg)
+
+11)	Use the scale bar at the top of the viewer and click-and-drag across the section where our reads aligned to highlight it. Then use the pop-up menu to click **Zoom On Range**
+
+![img74](doc_images/img74.jpg)
+
+12)	Repeat step 14 using the new view to refine the range again if the view didn’t change very much.
+
+![img75](doc_images/img75.jpg)
+
+13)	Your view should now see the track similar to the screenshot below. If you don’t see the mess of red lines below the thick black bar, that’s okay! We will turn it off next anyway.
+
+![img76](doc_images/img76.jpg)
+
+> **NOTE:** The tracks may be slightly different depending on how you have zoomed in. As long as you can see the image above somewhere on your screen you are doing great!
+
+14) Those red lines underneath the thick black box are showing how each individual sequence read aligned to the reference sequence. This particular view isn’t very helpful to us, so let’s turn it off.
+
+> **NOTE:** If you can’t see these lines, that’s great! You can skip Steps 15 & 16
+
+15) Click the little gear in the top right corner of our Child track to open its settings.
+
+![img77](doc_images/img77.jpg)
+
+16)	On this new menu page, change the “Alignment Display” to “Packed” and then click **Accept**. You can change many other settings here as well, but I’ll leave that up to you to explore outside of this workshop.
+
+![img78](doc_images/img78.jpg)
+
+Now that we can see the range a bit better, let’s break down what each of these colors represent in the pile-up view:
+
+•	Grey – This is the standard “bar” for the pile-up view. The taller this bar is in a particular region, the greater the coverage is from the mapped reads.
+•	Red – These are locations in the genome where reads mapped, but with mismatches in the nucleotide sequence compared to the reference sequence.
+•	Black – These are gaps that exist in the read alignment to the reference genome (i.e., the reads only have a nucleotide sequence that covers before/after the large black chunk).
+
+If you want to explore the pile-up view a bit more, try using the buttons in the toolbar just above the numeric range to navigate the assembly. Hold your mouse over the button for a description of what they can do!
+
+## Adding NCBI Data
+
+1)	Click the **Tracks** button in the bottom right corner of the viewer panel to open the Configure Page
+
+![img79](doc_images/img79.jpg)
+
+2) Click on the **Variation** tab and scroll way WAY down to the **dbVar** category. Then click the checkbox next to **dbVar Pathogenic Clinical Structural Variants** then click **Configure** in the bottom right corner of the page.
+
+![img80](doc_images/img80.jpg)
+
+3) You should now have a new structural variants track loaded into the viewer. This track shows the region of the genome where each variant is found. Blue variants are caused by an insertion in this region, while Red variants are caused by a deletion. Because our alignment suggests a deletion, we want to focus on the red variants.
+
+![img81](doc_images/img81.jpg)
+
+4) Next, zoom in on the right-half of our aligned region in the child track like the screenshot below. We want to look closely at the BBS9 gene to find structural variants that overlap with this region.
+
+![img82](doc_images/img82.jpg)
+
+5)	Obviously, there are a LOT of variants that overlap in this region. However, we’re concerned exclusively about our sequenced region. This means that any variants which extends beyond our sequenced region is less likely to be one of relevance for us. So rather than just guessing across every red variant, lets look for only ones that exist within our deletion.  
+Oh... there’s just one?
+
+![img83](doc_images/img83.jpg)
+
+6)	Mouse over the variant **nsv1398255** to get a new pop-up menu and select the dbVar link at the bottom of it
+
+![img84](doc_images/img84.jpg)
+
+7) On the dbVar page, navigate to the **Clinical Assertions** panel to see which clinical conditions have been associated with this deletion
+
+![img85](doc_images/img85.jpg)
+
+8) Just as we suspected! This region is associated with Bardet-biedl syndrome. If we wanted to, we could click on the phenotype and explore more about the condition. But that is something you need to explore on your own, because this is the end of the worksheet!
