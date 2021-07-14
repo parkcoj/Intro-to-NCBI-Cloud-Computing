@@ -17,7 +17,7 @@
   <body>
 
       <header>
-        <h1>{{ default: site.title | page.title | default: site.github.repository_name }}</h1>
+        <h1>{{ default: site.github.repository_name | default: site.title | page.title }}</h1>
       </header>
 
       <div id="banner">
