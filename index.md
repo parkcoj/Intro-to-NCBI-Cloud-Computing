@@ -421,9 +421,9 @@ Try to find the region of the chromosome that our reads aligned to:
 
 Now that we can see the range a bit better, let’s break down what each of these colors represent in the pile-up view:
 
-•	Grey – This is the standard “bar” for the pile-up view. The taller this bar is in a particular region, the greater the coverage is from the mapped reads.
-•	Red – These are locations in the genome where reads mapped, but with mismatches in the nucleotide sequence compared to the reference sequence.
-•	Black – These are gaps that exist in the read alignment to the reference genome (i.e., the reads only have a nucleotide sequence that covers before/after the large black chunk).
+- Grey – This is the standard “bar” for the pile-up view. The taller this bar is in a particular region, the greater the coverage is from the mapped reads.
+- Red – These are locations in the genome where reads mapped, but with mismatches in the nucleotide sequence compared to the reference sequence.
+- Black – These are gaps that exist in the read alignment to the reference genome (i.e., the reads only have a nucleotide sequence that covers before/after the large black chunk).
 
 If you want to explore the pile-up view a bit more, try using the buttons in the toolbar just above the numeric range to navigate the assembly. Hold your mouse over the button for a description of what they can do!
 
