@@ -3,6 +3,7 @@
 
 @import "{{ site.theme }}";
 
+// Changes header to Blue and updates text to be cleaner looking
 header {
   background: #0071BC;
   
@@ -13,12 +14,15 @@ header {
   }
 }
 
+// Changes documentation background to be gray, and text to be darker
 body {
   background: #DFDFE1;
   color:#080808;
   font-weight:400;
 }
 
+
+// Updates banner to be green with the same stylistic changes when moused over 
 #banner {
   background: #2E8540;
   border: #226430;
@@ -35,11 +39,13 @@ body {
   }
 }
 
+// Makes "bold" be bolder (this may not actually work right now)
 strong {
   font-weight: bolder;
   color:#080808;
 }
 
+// Changes style of the blockquote to be green and thicker
 blockquote {
   border-left:2px solid #2E8540;
   margin:0;
@@ -47,14 +53,16 @@ blockquote {
   font-style:italic;
 }
 
+// Removes the yellow arrows of unordered lists
 ul{
   list-style-image:none;
 }
 
+// Changes color of table of contents to be darker behind the gray background
 nav {
   ul {
     a {
-      color: #222;
+      color: #333;
     }
   }
 }
