@@ -121,7 +121,7 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 > Fun fact: If you navigate back to **New Query 2** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
 
-4) Type the following command (circled in yellow) into your empty query space, then click the blue **Run Query** button (circled in red).
+4) Type the following command _(circled in yellow)_ into your empty query space, then click the blue **Run Query** button _(circled in red)_.
 
 ![img22](doc_images/img22.jpg)
 
@@ -308,7 +308,7 @@ mkdir results && mv SRR* results/
 
 6) Finally, we need to move these results files to our S3 bucket so we can access them outside of our AWS account. Run the following AWS CLI command to copy the files to your S3 bucket.  
 
-> **REMEMBER:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name
+> **REMEMBER:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name. So copy/paste the command into your terminal, then use the arrow keys to move your cursor back through the string and change the name to your own bucket.
 
 ```bash
 aws s3 sync results/ s3://<username>-cloud-workshop
@@ -333,7 +333,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 ![img55](doc_images/img55.jpg)
 
-11) You should have four files in your bucket. We need the files that end in **.bam** and **.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
+11) You should have four files in your bucket. We need the files that end in **sorted.bam** and **sorted.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
 
 ![img56](doc_images/img56.jpg)
 
@@ -423,9 +423,9 @@ Try to find the region of the chromosome that our reads aligned to:
 
 Now that we can see the range a bit better, let’s break down what each of these colors represent in the pile-up view:
 
-- Grey – This is the standard “bar” for the pile-up view. The taller this bar is in a particular region, the greater the coverage is from the mapped reads.
-- Red – These are locations in the genome where reads mapped, but with mismatches in the nucleotide sequence compared to the reference sequence.
-- Black – These are gaps that exist in the read alignment to the reference genome (i.e., the reads only have a nucleotide sequence that covers before/after the large black chunk).
+- **Grey** – This is the standard “bar” for the pile-up view. The taller this bar is in a particular region, the greater the coverage is from the mapped reads.
+- **Red** – These are locations in the genome where reads mapped, but with mismatches in the nucleotide sequence compared to the reference sequence.
+- **Black** – These are gaps that exist in the read alignment to the reference genome (i.e., the reads only have a nucleotide sequence that covers before/after the large black chunk).
 
 If you want to explore the pile-up view a bit more, try using the buttons in the toolbar just above the numeric range to navigate the assembly. Hold your mouse over the button for a description of what they can do!
 
@@ -447,8 +447,9 @@ If you want to explore the pile-up view a bit more, try using the buttons in the
 
 ![img82](doc_images/img82.jpg)
 
-5)	Obviously, there are a LOT of variants that overlap in this region. However, we’re concerned exclusively about our sequenced region. This means that any variants which extends beyond our sequenced region is less likely to be one of relevance for us. So rather than just guessing across every red variant, lets look for only ones that exist within our deletion.  
-Oh... there’s just one?
+5)	Obviously, there are a LOT of variants that overlap in this region. However, our concern is only about our sequenced region of the gene. Variants which extend beyond our sequenced region are less likely to be relevant for us. So rather than just aimlessly checking every red variant, lets look only for variants that start or stop within our deletion.
+ 
+Oh... there’s just one? Let's check that one then.
 
 ![img83](doc_images/img83.jpg)
 
@@ -461,3 +462,36 @@ Oh... there’s just one?
 ![img85](doc_images/img85.jpg)
 
 8) Just as we suspected! This region is associated with Bardet-biedl syndrome. If we wanted to, we could click on the phenotype and explore more about the condition. But that is something you need to explore on your own, because this is the end of the worksheet!
+
+# Conclusion
+
+This concludes our exercise on navigating the AWS Cloud computing console and several of its most popular cloud services. We hope that you are motivated to take these skills and tools with you and explore how they can benefit your own research. You can find links to many useful resources to help you below.
+
+- Case Study - [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5778042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5778042/)
+
+**AWS**
+
+- AWS Account Creation: [https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+- AWS Athena Documentation: [https://docs.aws.amazon.com/athena/](https://docs.aws.amazon.com/athena/)
+- AWS Billing: [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html)
+- Cost Estimator: [https://calculator.aws/#/estimate](https://calculator.aws/#/estimate)
+- AWS CLI Documentation: [https://docs.aws.amazon.com/cli/index.html](https://docs.aws.amazon.com/cli/index.html)
+- AWS EC2 Instance Documentation: [https://docs.aws.amazon.com/ec2/index.html](https://docs.aws.amazon.com/ec2/index.html)
+- AWS Glue Documentation: [https://docs.aws.amazon.com/glue/](https://docs.aws.amazon.com/glue/)
+- AWS S3 Bucket Documentation: [https://docs.aws.amazon.com/s3/index.html](https://docs.aws.amazon.com/s3/index.html)
+
+**Genome Data Viewer**
+
+- Genome Data Viewer: [https://www.ncbi.nlm.nih.gov/genome/gdv/](https://www.ncbi.nlm.nih.gov/genome/gdv/)
+- Sequence Viewer Documentation: [https://www.ncbi.nlm.nih.gov/tools/sviewer/](https://www.ncbi.nlm.nih.gov/tools/sviewer/)
+
+**MagicBLAST**
+
+- MagicBLAST Documentation: [https://ncbi.github.io/magicblast/](https://ncbi.github.io/magicblast/)
+- MagicBLAST FTP page: [ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST)
+- SamTools Documentation: [http://www.htslib.org/](http://www.htslib.org/)
+
+**SRA**
+
+- SRA Homepage: [https://www.ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/sra)
+- SRA in the Cloud: [https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/)
