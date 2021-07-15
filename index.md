@@ -9,7 +9,7 @@
 ![img2](doc_images/img2.jpg)
 
 
-3) Click "Sign-In" under the AWS Console Sign-In column on the new page
+3) Click **Sign-In** under the AWS Console Sign-In column on the new page
 
 ![img3](doc_images/img3.jpg)
 
@@ -36,8 +36,10 @@ Before we can use Athena, we need to make an S3 bucket that we can save our resu
 
 ![img6](doc_images/img6.jpg)
 
-3) Enter a bucket name and make sure the region is set to `US East (N. Virginia) us-east-1`  
-**S3 bucket names must be completely unique.**  
+3) Enter a bucket name and make sure the region is set to `US East (N. Virginia) us-east-1`
+
+**S3 bucket names must be completely unique.**
+
 For this workshop, use the format `<username>-cloud-workshop` where `<username>` is the username you used to login
 
 ![img7](doc_images/img7.jpg)
