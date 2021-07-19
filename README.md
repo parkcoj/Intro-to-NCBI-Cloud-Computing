@@ -4,6 +4,12 @@ This is a repo to hold the documentation and other supplementary files necessary
 
 Cooper Park is the original creator of this repo, please contact him with any questions at parkcoj@nih.gov
 
-To update the features in this webpage use the following link: https://github.com/pages-themes/leap-day/blob/master/_sass/jekyll-theme-leap-day.scss
+The "Leap-Day" template this documentation style is based off of can be found here: https://github.com/pages-themes/leap-day
+
+The "creative" side of this documentation is stored in the \_layouts folder, assets folder, and config.yml file. The actual documentation text is stored in index.md.
+
+
+
+## For future development reading
 
 To learn more about making multi-page...pages... visit this tutorial: https://phuston.github.io/patrickandfrantonarethebestninjas/howto
