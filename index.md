@@ -121,7 +121,13 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 > Fun fact: If you navigate back to **New Query 2** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
 
-4) Type the following command _(circled in yellow)_ into your empty query space, then click the blue **Run Query** button _(circled in red)_.
+4) Copy/paste the following command into the query box in Athena _(circled in yellow)_, then click the blue **Run Query** button _(circled in red)_.
+
+```SQL
+SELECT *
+FROM "sra"."metadata"
+WHERE sra_study = 'SRP125431'
+```
 
 ![img22](doc_images/img22.jpg)
 
