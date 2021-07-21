@@ -52,8 +52,6 @@ For this workshop, use the format `<username>-cloud-workshop` where `<username>`
 
 ![img9](doc_images/img9.jpg)
 
-> For more information about the settings we skipped, visit the supplementary text (section: **In-depth S3 bucket creation**)
-
 6) Clicking the button will redirect you back to the main S3 page. You should be able to find your new bucket in the list. If so, you have successfully created an S3 bucket!
 
 ![img10](doc_images/img10.jpg)
@@ -84,7 +82,7 @@ Now that we have an S3 bucket ready, we can go see what the Athena page looks li
 
 Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
 
-> For the detailed instructions on using AWS Glue to add a table to Athena, visit the Supplementary Text (section: **Instructions for AWS Glue**)!
+> For the detailed instructions on using AWS Glue to add a table to Athena, visit the Supplementary Text: **Instructions for AWS Glue**!
 
 ## Exploring Athena Tables
 
@@ -171,7 +169,7 @@ WHERE sra_study = 'SRP125431'
 
 ![img31](doc_images/img31.jpg)
 
-7) On page **Step 3: Configure Instance Details** - set the IAM role to **NCBI-Codeathon-Administrative-Instance** _(top image)_. Leave all other settings alone and click **Next: Add Storage** in the bottom right _(bottom image)_
+7) On page **Step 3: Configure Instance Details** - set the IAM role to **NCBI-Workshop-participant-EC2-instance** _(top image)_. Leave all other settings alone and click **Next: Add Storage** in the bottom right _(bottom image)_
 
 ![img32](doc_images/img32.jpg)
 
@@ -226,8 +224,6 @@ WHERE sra_study = 'SRP125431'
 18)	Refresh the page occasionally until the **Status Check** column changes to **2/2 checks passed** for your instance. This means we can now log into the instance.
 
 ![img46](doc_images/img46.jpg)
-
-> Want to know more about this table of instances? Check out what the other columns mean in the Supplementary Text (section: **In-depth EC2 Instance Creation**)
  
 19) Check the box to the left of your instance name _(top image)_ to select the instance, then click **Connect** in the top right to head to the instance launcher _(bottom image)_
 
@@ -271,8 +267,17 @@ sudo apt install -y samtools
 
 ```bash
 sudo apt install -y unzip
+```
+
+```bash
 curl -o awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+```
+
+```bash
 unzip awscliv2.zip
+```
+
+```bash
 sudo ./aws/install
 ```
 
@@ -285,17 +290,17 @@ B.	The accession numbers for our reads – _Will be solved with Step 2 below_
 1)	Based on the information from the manuscript, we know that the deleted region in the genome is on Chromosome 7. In NCBI, the accession number for this sequence is **NC_000007** so we can download this sequence to our remote computer and use it as the reference sequence for our alignment. Download the sequence using the following command.
 
 ```bash
-curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000007&retype=fasta'
+curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000007&rettype=fasta'
 ```
 
-2) Our Athena query gave us three different accession numbers that could be the child’s sequence data. To find out which one is associated with the child, scroll through the columns to find one that distinguishes each accession (_hint: it’s the library_name column_). It looks like **SRR6314034** is the ID we want!
+2) Our Athena query gave us three different accession numbers that could be the child’s sequence data. To find out which one is associated with the child, scroll through the columns to find one that distinguishes each accession (_hint: it’s the library_name column_). 
 
 ![img50](doc_images/img50.jpg)
 
-3) To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.
+3) It looks like **SRR6314034** is the ID we want! To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.
 
 ```bash
-./ncbi-magicblast-1.6.0/bin/magicblast -subject chr7 -sra SRR6314034 -out SRR6314034.sam
+./ncbi-magicblast-1.6.0/bin/magicblast -subject chr7.fa -sra SRR6314034 -out SRR6314034.sam
 ```
 
 4) Next, we need to format the output files so that we can use them in Genome Data Viewer. Run the following samtools commands to do this. it will run each samtools command in order automatically. Like above, if NOTHING happened after hitting enter, then it worked!
