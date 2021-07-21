@@ -580,7 +580,7 @@ Now that you have a handle on how SQL commands work, let’s try some examples! 
 
 If you find yourself stumped on the answer to any of these, or just want to check your answer, click the dropdown box underneath the question to reveal the solution and see a screenshot of the results table!
 
-1. You just came across a new paper with lots of great sequence data. You want to add that data to your own research so you jump to the paper's Data Availability section (because all great computational papers have one!) and see that the data was stored in an SRA study under the accession SRP291000. Write a SQL command in the query terminal to find all data associated with the SRA study accession SRP291000:
+a) You just came across a new paper with lots of great sequence data. You want to add that data to your own research so you jump to the paper's Data Availability section (because all great computational papers have one!) and see that the data was stored in an SRA study under the accession SRP291000. Write a SQL command in the query terminal to find all data associated with the SRA study accession SRP291000:
 
 {::options parse_block_html="true" /}
 <details><summary markdown="span">**Click here to see solution!**</summary>
@@ -591,7 +591,7 @@ If you find yourself stumped on the answer to any of these, or just want to chec
 {::options parse_block_html="false" /}
 
 
-2.	You are working on a new genome assembly tool for short-read sequences. However, you don't have any reads of your own to test it! You know that SRA metadata includes the sequencing platform reads were generated on, so you decide you want to check there. Write a SQL command in the query terminal to find all data sequenced with the OXFORD_NANOPORE platform.
+b) You are working on a new genome assembly tool for short-read sequences. However, you don't have any reads of your own to test it! You know that SRA metadata includes the sequencing platform reads were generated on, so you decide you want to check there. Write a SQL command in the query terminal to find all data sequenced with the OXFORD_NANOPORE platform.
 
 {::options parse_block_html="true" /}
 <details><summary markdown="span">**Click here to see solution!**</summary>
@@ -612,7 +612,7 @@ In this command we use the **AND** statement to add multiple requirements for ou
 
 Here’s a few brain teasers to flex your new SQL skills! Remember, if you are stuck you can click the dropdown box underneath the question to reveal the solution and see a screenshot of the results table!
 
-1.	After testing your genome assembly tool from earlier, you realize that not all Illumina datasets are created equally! It turns out you only need WGS (Whole Genome Sequencing) genomic data to properly validate your software. Also, you noticed that there was some metagenomic and transcriptomic data mixed in with your test cases. So, this time you are just going to look for “genomic” datasets. Write a SQL command in the query terminal to find all **WGS assay_type** data sequenced on the **ILLUMINA platform** and a **GENOMIC library_source**.
+a)	After testing your genome assembly tool from earlier, you realize that not all Illumina datasets are created equally! It turns out you only need WGS (Whole Genome Sequencing) genomic data to properly validate your software. Also, you noticed that there was some metagenomic and transcriptomic data mixed in with your test cases. So, this time you are just going to look for “genomic” datasets. Write a SQL command in the query terminal to find all **WGS assay_type** data sequenced on the **ILLUMINA platform** and a **GENOMIC library_source**.
 
 {::options parse_block_html="true" /}
 <details><summary markdown="span">**Click here to see solution!**</summary>
@@ -623,7 +623,7 @@ Here’s a few brain teasers to flex your new SQL skills! Remember, if you are s
 {::options parse_block_html="false" /}
 
 
-2. You are designing a population-level epidemiological survey of some bacterial pathogens from samples collected across Europe. You decide you want to get some preliminary data on _Escherichia coli_ (or maybe _Staphylococcus aureus_...) from the SRA, but you aren’t picky about what kind of sequencing is done just yet. Write a SQL command in the query terminal to find all sequences collected from the **continent Europe** and are from the **organism Escherichia coli or Staphylococcus aureus**.
+b) You are designing a population-level epidemiological survey of some bacterial pathogens from samples collected across Europe. You decide you want to get some preliminary data on _Escherichia coli_ (or maybe _Staphylococcus aureus_...) from the SRA, but you aren’t picky about what kind of sequencing is done just yet. Write a SQL command in the query terminal to find all sequences collected from the **continent Europe** and are from the **organism Escherichia coli or Staphylococcus aureus**.
 
 _Hint: The column header for the continent is not very intuitive. Try using the “Preview Table” option from the “Tables” tab described earlier to find a column that would fit._
 
