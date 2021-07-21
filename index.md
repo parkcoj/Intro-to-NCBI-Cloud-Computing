@@ -628,8 +628,9 @@ Here’s a few brain teasers to flex your new SQL skills! Remember, if you are s
 _Hint: The column header for the continent is not very intuitive. Try using the “Preview Table” option from the “Tables” tab described earlier to find a column that would fit._
 
 {::options parse_block_html="true" /}
-<details><summary>Click to see solution!</summary>
+<details><summary markdown="span">Click to see solution!</summary>
 ```SELECT * FROM "sra"."metadata" WHERE (organism = 'Escherichia coli' OR organism = 'Staphylococcus aureus') AND geo_loc_name_country_continent_calc = 'Europe'```
 ![img93](doc_images/img93.jpg)
 </details>
+<br/>
 {::options parse_block_html="false" /}
