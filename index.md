@@ -583,7 +583,7 @@ If you find yourself stumped on the answer to any of these, or just want to chec
 1. You just came across a new paper with lots of great sequence data. You want to add that data to your own research so you jump to the paper's Data Availability section (because all great computational papers have one!) and see that the data was stored in an SRA study under the accession SRP291000. Write a SQL command in the query terminal to find all data associated with the SRA study accession SRP291000:
 
 <details>
-  <summary>**Click to see solution!**</summary>
+  <summary>Click to see solution!</summary>
  
  ```SELECT * FROM "sra"."metadata" WHERE sra_study = 'SRP291000'```
  
@@ -594,7 +594,7 @@ If you find yourself stumped on the answer to any of these, or just want to chec
 2.	You are working on a new genome assembly tool for short-read sequences. However, you don't have any reads of your own to test it! You know that SRA metadata includes the sequencing platform reads were generated on, so you decide you want to check there. Write a SQL command in the query terminal to find all data sequenced with the OXFORD_NANOPORE platform.
 
 <details>
-  <summary>**Click to see solution!**</summary>
+  <summary>Click to see solution!</summary>
  
  ```SELECT * FROM "sra"."metadata" WHERE platform = 'OXFORD_NANOPORE'```
 
@@ -615,7 +615,7 @@ Here’s a few brain teasers to flex your new SQL skills! Remember, if you are s
 1.	After testing your genome assembly tool from earlier, you realize that not all Illumina datasets are created equally! It turns out you only need WGS (Whole Genome Sequencing) genomic data to properly validate your software. Also, you noticed that there was some metagenomic and transcriptomic data mixed in with your test cases. So, this time you are just going to look for “genomic” datasets. Write a SQL command in the query terminal to find all **WGS assay_type** data sequenced on the **ILLUMINA platform** and a **GENOMIC library_source**.
 
 <details>
-  <summary>**Click to see solution!**</summary>
+  <summary>Click to see solution!</summary>
  
  ```SELECT * FROM "sra"."metadata" WHERE platform = 'ILLUMINA' AND assay_type = 'WGS' AND librarysource = 'GENOMIC'```
  
@@ -628,7 +628,7 @@ Here’s a few brain teasers to flex your new SQL skills! Remember, if you are s
 _Hint: The column header for the continent is not very intuitive. Try using the “Preview Table” option from the “Tables” tab described earlier to find a column that would fit._
 
 <details>
-  <summary>**Click to see solution!**</summary>
+  <summary>Click to see solution!</summary>
  
 ```SELECT * FROM "sra"."metadata" WHERE (organism = 'Escherichia coli' OR organism = 'Staphylococcus aureus') AND geo_loc_name_country_continent_calc = 'Europe'```
 ![img93](doc_images/img93.jpg)
