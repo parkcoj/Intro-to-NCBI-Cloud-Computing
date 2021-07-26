@@ -6,7 +6,6 @@
 // Changes header to Blue and updates text to be cleaner looking
 header {
   background: #0071BC;
-  position: static;
   
 
   h1 {
@@ -32,12 +31,10 @@ section {
 // Updates banner to be green with the same stylistic changes when moused over 
 #banner {
   background: #2E8540;
-  position: static;
   border: #226430;
   right: 35%;
   
   .button {
-    position: static;
     border: 1px solid #1E562A;
     background: linear-gradient(#3DB156, #2E8540);
     color: #f3f3f3;
