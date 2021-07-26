@@ -8,27 +8,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    <script>
-      $(window).scroll(function(){
-        var scrollTop = $(document).scrollTop();
-        var anchors = $('body').find('h1, h2');
-        //var active = $(anchors[0]);
-        
-        for (var i = 0; i < anchors.length; i++){
-          if (scrollTop > $(anchors[i]).offset().top - 100 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 100) {
-            $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').addClass('active');
-            // $('nav ul li a[href="#' + active.attr('id') + '"]').removeClass('active');
-          //  var active = $(anchors[i]);
-          //} else if ($(anchors[i]) != active) {
-          } else {
-            $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').removeClass('active');
-            // $('nav ul li a[href="#' + active.attr('id') + '"]').addClass('active');
-          //} else {
-            
-          }
-        }
-      });
-    </script>
+    
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
