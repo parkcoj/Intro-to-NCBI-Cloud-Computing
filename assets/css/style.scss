@@ -85,5 +85,8 @@ nav {
   .section-nav li.active > a {
   color: #333;
   font-weight: 500;
+  }
 }
+.active {
+  background-color: darkgray;
 }
