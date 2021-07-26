@@ -67,7 +67,8 @@ ul{
 
 // Changes color of table of contents to be darker behind the gray background
 nav {
-  position: relative;
+  position: absolute;
+  top: 0px;
   ul {
     a {
       color: #333;
