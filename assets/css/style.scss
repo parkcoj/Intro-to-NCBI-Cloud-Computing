@@ -72,6 +72,12 @@ nav {
   max-height: 600px;
   text-align: left;
   ul {
+    li.tag-h1.active {
+      background-color: rgba(2,191,231,.3);
+    }
+    li.tag-h2.active {
+      background-color: rgba(2,191,231,.3);
+    }
     a {
       color: #333;
     }
