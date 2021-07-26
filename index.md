@@ -64,11 +64,15 @@ Now that we have an S3 bucket ready, we can go see what the Athena page looks li
 
 ![img11](doc_images/img11.jpg)
 
+&nbsp;
+
 2) Visiting the Athena page should prompt you with a few notifications at the top of the page. you can just click the little "X" and disregard the first two.
+
+&nbsp;
 
 ![img12](doc_images/img12.jpg)
 
-3) The third notification is actually very important .We need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click **Settings** in the top right of the screen
+3) The remaining notification tells us that we need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click **Settings** in the top right of the screen
 
 ![img13](doc_images/img13.jpg)
 
@@ -222,6 +226,8 @@ WHERE sra_study = 'SRP125431'
 ![img45](doc_images/img45.jpg)
 
 18)	Refresh the page occasionally until the **Status Check** column changes to **2/2 checks passed** for your instance. This means we can now log into the instance.
+
+> **NOTE:** There are several 'statuses' this column can have. 2/2 checks passed is the final status. So, if you see anything else in the **Status Check** column, the instance is not ready to go.
 
 ![img46](doc_images/img46.jpg)
  
