@@ -19,10 +19,11 @@
             $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').addClass('active');
             // $('nav ul li a[href="#' + active.attr('id') + '"]').removeClass('active');
             var active = $(anchors[i]);
-          } else if ($(anchors[i]) == active) {
-            $('nav ul li a[href="#' + active.attr('id') + '"]').addClass('active');
-          } else {
+          } else if ($(anchors[i]) != active) {
             $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').removeClass('active');
+            // $('nav ul li a[href="#' + active.attr('id') + '"]').addClass('active');
+          //} else {
+            
           }
         }
       });
