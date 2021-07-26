@@ -11,24 +11,23 @@
     <script>
       window.addEventListener('DOMContentLoaded', () => {
 
-	const observer = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			const id = entry.target.getAttribute('id');
-			if (entry.intersectionRatio > 0) {
-				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-			} else {
-				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-			}
-		});
-	});
-
-	// Track all sections that have an `id` applied
-	document.querySelectorAll('section[id]').forEach((section) => {
-		observer.observe(section);
-	  });
-	
-       });
-	  </script>
+        const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+	    const id = entry.target.getAttribute('id');
+	    if (entry.intersectionRatio > 0) {
+	      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+            } else {
+              document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+	    }
+          });
+        });
+      
+        // Track all sections that have an `id` applied
+        document.querySelectorAll('section[id]').forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
