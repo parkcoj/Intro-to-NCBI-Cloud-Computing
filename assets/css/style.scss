@@ -69,6 +69,7 @@ ul{
 nav {
   position: fixed;
   overflow: scroll;
+  max-height: 600px;
   ul {
     a {
       color: #333;
