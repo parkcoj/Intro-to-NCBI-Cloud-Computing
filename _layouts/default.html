@@ -15,7 +15,7 @@
         var active = anchors[0];
         
         for (var i = 0; i < anchors.length; i++){
-          if (scrollTop > $(anchors[i]).offset().top - 50 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 50)
+          if (scrollTop > $(anchors[i]).offset().top - 50 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 50) {
             $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').addClass('active');
             $('nav ul li a[href="#' + $(active).attr('id') + '"]').removeClass('active');
             var active = anchors[i];
