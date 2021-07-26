@@ -9,23 +9,17 @@
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-
-        const observer = new IntersectionObserver(entries => {
-	  entries.forEach(entry => {
-	    const id = entry.target.getAttribute('id');
-	    if (entry.intersectionRatio > 0) {
-	      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-            } else {
-              document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-	    }
-          });
-        });
-      
-        // Track all sections that have an `id` applied
-        document.querySelectorAll('section[id]').forEach((section) => {
-          observer.observe(section);
-        });
+      $(window).scroll(function(){
+        var scrollTop = $(document).scrollTop();
+        var anchors = $('body').find('h1');
+    
+        for (var i = 0; i < anchors.length; i++){
+          if (scrollTop > $(anchors[i]).offset().top - 50 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 50) {
+            $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').addClass('active');
+          } else {
+            $('nav ul li a[href="#' + $(anchors[i]).attr('id') + '"]').removeClass('active');
+          }
+        }
       });
     </script>
     <!--[if lt IE 9]>
