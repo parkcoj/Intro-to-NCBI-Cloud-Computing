@@ -389,7 +389,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 5) Now we can add our own tracks to the viewer. Click on **User Data and Track Hubs** on the left side of the screen
 
-![img67](doc_images/img67.jpg){:height="70%" width="60%"}
+![img67](doc_images/img67.jpg){:height="400px" width="60%"}
 
 6) Click the **Options** pulldown menu and click **Add Remote Files...** 
 
@@ -414,11 +414,11 @@ Try to find the region of the chromosome that our reads aligned to:
 
 11)	Use the scale bar at the top of the viewer and click-and-drag across the section where our reads aligned to highlight it. Then use the pop-up menu to click **Zoom On Range**
 
-![img74](doc_images/img74.jpg){:height="70%" width="60%"}
+![img74](doc_images/img74.jpg){:height="50%" width="60%"}
 
 12)	Repeat step 14 using the new view to refine the range again if the view didn’t change very much.
 
-![img75](doc_images/img75.jpg){:height="70%" width="60%"}
+![img75](doc_images/img75.jpg){:height="50%" width="60%"}
 
 13)	Your view should now see the track similar to the screenshot below. If you don’t see the mess of red lines below the thick black bar, that’s okay! We will turn it off next anyway.
 
@@ -476,7 +476,7 @@ Oh... there’s just one? Let's check that one then.
 
 7) On the dbVar page, navigate to the **Clinical Assertions** panel to see which clinical conditions have been associated with this deletion
 
-![img85](doc_images/img85.jpg){:width="60%"}
+![img85](doc_images/img85.jpg)
 
 8) Just as we suspected! This region is associated with Bardet-biedl syndrome. If we wanted to, we could click on the phenotype and explore more about the condition. But that is something you need to explore on your own, because this is the end of the worksheet!
 
