@@ -2,7 +2,7 @@
 
 1) Find your credential email with subject: **NCBI Codethon Credentials**
 
-![img1](doc_images/img1.jpg)
+![img1](doc_images/img1.jpg){:width="50%"}
 
 2) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials from the email *(left image)* and create a new password after logging in *(right image)*
 
