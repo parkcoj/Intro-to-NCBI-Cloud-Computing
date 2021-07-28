@@ -205,7 +205,7 @@ WHERE sra_study = 'SRP125431'
 
 13) On page **Step 7: Review and Launch** – You should see two warnings at the top of the screen denoted by the symbol below. You can disregard these.
 
-![img41](doc_images/img41.jpg){:width="80%"}
+![img41](doc_images/img41.jpg){:width="60%"}
 
 14) Click **Launch** in the bottom right of the screen.
 
@@ -219,7 +219,7 @@ WHERE sra_study = 'SRP125431'
 
 16)	On the **Launch Status** page – Click **View Instances** in the bottom right
 
-![img44](doc_images/img44.jpg){:width="80%"}
+![img44](doc_images/img44.jpg){:width="60%"}
 
 17)	On the **Instances** page – Find your instance in the table of created instances and look to the **Status Check** column to see the status of yours.
 
@@ -233,7 +233,7 @@ WHERE sra_study = 'SRP125431'
  
 19) Check the box to the left of your instance name _(top image)_ to select the instance, then click **Connect** in the top right to head to the instance launcher _(bottom image)_
 
-![img47](doc_images/img47.jpg){:width="80%"}
+![img47](doc_images/img47.jpg){:width="70%"}
 
 ![img48](doc_images/img48.jpg){:width="80%"}
 
@@ -340,7 +340,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 9) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
 
-![img52](doc_images/img52.jpg){:width="80%"}
+![img52](doc_images/img52.jpg){:width="70%"}
 
 ![img53](doc_images/img53.jpg){:width="60%"}
 
@@ -354,7 +354,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 ![img56](doc_images/img56.jpg){:width="60%"}
 
-![img57](doc_images/img57.jpg){:width="60%"}
+![img57](doc_images/img57.jpg){:width="40%"}
 
 12) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
 
@@ -389,7 +389,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 5) Now we can add our own tracks to the viewer. Click on **User Data and Track Hubs** on the left side of the screen
 
-![img67](doc_images/img67.jpg){:width="60%"}
+![img67](doc_images/img67.jpg){:height="70%" width="60%"}
 
 6) Click the **Options** pulldown menu and click **Add Remote Files...** 
 
@@ -414,11 +414,11 @@ Try to find the region of the chromosome that our reads aligned to:
 
 11)	Use the scale bar at the top of the viewer and click-and-drag across the section where our reads aligned to highlight it. Then use the pop-up menu to click **Zoom On Range**
 
-![img74](doc_images/img74.jpg){:width="60%"}
+![img74](doc_images/img74.jpg){:height="70%" width="60%"}
 
 12)	Repeat step 14 using the new view to refine the range again if the view didn’t change very much.
 
-![img75](doc_images/img75.jpg){:width="60%"}
+![img75](doc_images/img75.jpg){:height="70%" width="60%"}
 
 13)	Your view should now see the track similar to the screenshot below. If you don’t see the mess of red lines below the thick black bar, that’s okay! We will turn it off next anyway.
 
@@ -458,7 +458,7 @@ If you want to explore the pile-up view a bit more, try using the buttons in the
 
 3) You should now have a new structural variants track loaded into the viewer. This track shows the region of the genome where each variant is found. Blue variants are caused by an insertion in this region, while Red variants are caused by a deletion. Because our alignment suggests a deletion, we want to focus on the red variants.
 
-![img81](doc_images/img81.jpg){:width="60%"}
+![img81](doc_images/img81.jpg){:height="70%" width="60%"}
 
 4) Next, zoom in on the right-half of our aligned region in the child track like the screenshot below. We want to look closely at the BBS9 gene to find structural variants that overlap with this region.
 
