@@ -6,16 +6,16 @@
 
 2) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials from the email *(left image)* and create a new password after logging in *(right image)*
 
-![img2](doc_images/img2.jpg)
+![img2](doc_images/img2.jpg){:width="50%"}
 
 
 3) Click **Sign-In** under the AWS Console Sign-In column on the new page
 
-![img3](doc_images/img3.jpg)
+![img3](doc_images/img3.jpg){:width="50%"}
 
 4) If you see **AWS Management Console** like the screenshot below, you have successfully logged in to the AWS Console!
 
-![img4](doc_images/img4.jpg)
+![img4](doc_images/img4.jpg){:width="50%"}
 
 > **NOTE:** If you are logged out or get kicked out of the console, simply return to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and log in again (remember your newly created password!) to get back to the console home page.
 
