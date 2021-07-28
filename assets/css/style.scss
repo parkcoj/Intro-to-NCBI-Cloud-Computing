@@ -42,8 +42,9 @@ section {
     &:hover {
       background: linear-gradient(#3DB156, #3DB156);
       background-color: #5DC774;
-    }
-    
+    } 
+  }
+  
   .slides {
     position:fixed;
     left:60%;
@@ -54,7 +55,6 @@ section {
     font-size:14px;
     background-color: #FFE788;
     }
-  }
 }
 
 // Makes "bold" be bolder (this may not actually work right now)
