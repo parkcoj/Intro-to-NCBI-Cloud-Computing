@@ -389,7 +389,7 @@ aws s3 sync results/ s3://<username>-cloud-workshop
 
 5) Now we can add our own tracks to the viewer. Click on **User Data and Track Hubs** on the left side of the screen
 
-![img67](doc_images/img67.jpg){:height="400px" width="60%"}
+![img67](doc_images/img67.jpg){:height="5%" width="60%"}
 
 6) Click the **Options** pulldown menu and click **Add Remote Files...** 
 
