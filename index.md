@@ -247,6 +247,7 @@ Before we can do our analyses, we need to install some software into our new rem
 
 1) First we need to update the pre-installed software in our terminal. Copy/paste the following command into your terminal, then hit **Enter**
 
+{% include codeHeader.html %}
 ```bash
 sudo apt-get update
 ```
