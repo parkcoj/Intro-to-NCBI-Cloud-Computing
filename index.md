@@ -313,7 +313,13 @@ curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nu
 
 ```bash
 samtools view -S -b SRR6314034.sam > SRR6314034.bam
+```
+
+```bash
 samtools sort SRR6314034.bam -o SRR6314034.sorted.bam
+```
+
+```bash
 samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
 ```
 
