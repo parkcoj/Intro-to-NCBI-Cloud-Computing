@@ -254,36 +254,43 @@ sudo apt-get update
 
 2) To download magicBLAST, copy/paste the following command into your terminal, then hit **Enter**
 
+{% include codeHeader.html %}
 ```bash
 curl -o magicblast.tar.gz https://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.6.0-x64-linux.tar.gz
 ```
 
 3) We also need to unpack the software so we can run it. Run the following command to do that
 
+{% include codeHeader.html %}
 ```bash
 tar -xvzf magicblast.tar.gz && chmod -R 755 ncbi-magicblast-1.6.0/
 ```
 
 4) Next, we need to install samtools. Run the following command below to do that.
 
+{% include codeHeader.html %}
 ```bash
 sudo apt install -y samtools
 ```
 
 5) Finally, we need to install the AWS command line interface. Run the following commands to do that
 
+{% include codeHeader.html %}
 ```bash
 sudo apt install -y unzip
 ```
 
+{% include codeHeader.html %}
 ```bash
 curl -o awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
 ```
 
+{% include codeHeader.html %}
 ```bash
 unzip awscliv2.zip
 ```
 
+{% include codeHeader.html %}
 ```bash
 sudo ./aws/install
 ```
@@ -296,6 +303,7 @@ B.	The accession numbers for our reads – _Will be solved with Step 2 below_
 
 1)	Based on the information from the manuscript, we know that the deleted region in the genome is on Chromosome 7. In NCBI, the accession number for this sequence is **NC_000007** so we can download this sequence to our remote computer and use it as the reference sequence for our alignment. Download the sequence using the following command.
 
+{% include codeHeader.html %}
 ```bash
 curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000007&rettype=fasta'
 ```
@@ -306,26 +314,31 @@ curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nu
 
 3) It looks like **SRR6314034** is the ID we want! To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.
 
+{% include codeHeader.html %}
 ```bash
 ./ncbi-magicblast-1.6.0/bin/magicblast -subject chr7.fa -sra SRR6314034 -out SRR6314034.sam
 ```
 
 4) Next, we need to format the output files so that we can use them in Genome Data Viewer. Run the following samtools commands to do this. it will run each samtools command in order automatically. Like above, if NOTHING happened after hitting enter, then it worked!
 
+{% include codeHeader.html %}
 ```bash
 samtools view -S -b SRR6314034.sam > SRR6314034.bam
 ```
 
+{% include codeHeader.html %}
 ```bash
 samtools sort SRR6314034.bam -o SRR6314034.sorted.bam
 ```
 
+{% include codeHeader.html %}
 ```bash
 samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
 ```
 
 5) Now we'll move all these results files to a single folder so we can keep track of them
 
+{% include codeHeader.html %}
 ```bash
 mkdir results && mv SRR* results/
 ```
@@ -334,6 +347,7 @@ mkdir results && mv SRR* results/
 
 > **REMEMBER:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name. So copy/paste the command into your terminal, then use the arrow keys to move your cursor back through the string and change the name to your own bucket.
 
+{% include codeHeader.html %}
 ```bash
 aws s3 sync results/ s3://<username>-cloud-workshop
 ```
