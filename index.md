@@ -46,6 +46,8 @@ For this workshop, use the format `<username>-cloud-workshop` where `<username>`
 
 4) Scroll down to the **Block Public Access settings for this bucket** section. Deselect the blue checkbox at the top and select the bottom 2 checkboxes. Then check the box underneath the warning symbol to acknowledge your changes to the public access settings
 
+>**NOTE:** We turn on Public Access so that we can upload our files from the bucket directly to public websites like NCBI (*e.g.*, we will be uploading result files from our bucket to the Genome Data Viewer later today). By default, you should keep your bucket from Public Access unless you explicitly need it
+
 ![img8](doc_images/img8.jpg){:width="60%"}
 
 5) Ignore the rest of the settings and scroll to the bottom of the page. Click the orange **Create Bucket** button.
@@ -205,6 +207,8 @@ WHERE sra_study = 'SRP125431'
 
 13) On page **Step 7: Review and Launch** – You should see two warnings at the top of the screen denoted by the symbol below. You can disregard these.
 
+> **NOTE:** The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible. Typically you don't want to do this, but for the workshop this ensures everyone can access their instance without troubleshooting network configurations. We will restrict access to our instances with another method in two more steps.
+
 ![img41](doc_images/img41.jpg){:width="60%"}
 
 14) Click **Launch** in the bottom right of the screen.
@@ -213,9 +217,9 @@ WHERE sra_study = 'SRP125431'
 
 15)	On the pop-up menu – change the first dropdown menu to **Proceed without a key pair** and check the box below it to acknowledge the change. Finally, click **Launch Instances** in the bottom right of the popup.
 
-![img43](doc_images/img43.jpg){:width="60%"}
+> **NOTE:** Key pairs are used to access this remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop. Additionally, by disabling the key pairs we also prevent public access to the instance.
 
-> **NOTE:** Key pairs are used to access the remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop.
+![img43](doc_images/img43.jpg){:width="60%"}
 
 16)	On the **Launch Status** page – Click **View Instances** in the bottom right
 
