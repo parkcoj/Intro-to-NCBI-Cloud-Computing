@@ -11,7 +11,7 @@
 
 3) Click **Sign-In** under the AWS Console Sign-In column on the new page
 
-![img3](doc_images/img3.jpg){:width="60%"}
+![img3](doc_images/img3.jpg)
 
 4) If you see **AWS Management Console** like the screenshot below, you have successfully logged in to the AWS Console!
 
