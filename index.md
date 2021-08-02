@@ -127,7 +127,8 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 4) Copy/paste the following command into the query box in Athena _(circled in yellow)_, then click the blue **Run Query** button _(circled in red)_.
 
-```SQL
+{% include codeHeader.html %}
+```
 SELECT *
 FROM "sra"."metadata"
 WHERE sra_study = 'SRP125431'
