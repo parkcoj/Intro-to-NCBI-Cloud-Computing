@@ -201,13 +201,15 @@ WHERE sra_study = 'SRP125431'
 
 ![img39](doc_images/img39.jpg){:width="80%"}
 
+> **NOTE:** This "default" network setting configuration leaves the instance open to public access. Typically you will want to restrict this to only trusted IP addresses, but for the purposes of the workshop we keep this open so there is no need to troubleshoot network issues. To balance this security flaw, we will restrict access to our instances with another instance feature in a few more steps.
+
 12) Click **Review and Launch** in the bottom right of the screen
 
 ![img40](doc_images/img40.jpg){:width="60%"}
 
 13) On page **Step 7: Review and Launch** – You should see two warnings at the top of the screen denoted by the symbol below. You can disregard these.
 
-> **NOTE:** The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible. Typically you don't want to do this, but for the workshop this ensures everyone can access their instance without troubleshooting network configurations. We will restrict access to our instances with another method in two more steps.
+> **NOTE:** The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible, which is discussed in the above "NOTE".
 
 ![img41](doc_images/img41.jpg){:width="60%"}
 
@@ -217,7 +219,7 @@ WHERE sra_study = 'SRP125431'
 
 15)	On the pop-up menu – change the first dropdown menu to **Proceed without a key pair** and check the box below it to acknowledge the change. Finally, click **Launch Instances** in the bottom right of the popup.
 
-> **NOTE:** Key pairs are used to access this remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop. Additionally, by disabling the key pairs we also prevent public access to the instance.
+> **NOTE:** Key pairs are used to access this remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop. Additionally, by disabling the key pairs we also prevent public access to the instance. (This is how we will secure our instances for the workshop)
 
 ![img43](doc_images/img43.jpg){:width="60%"}
 
