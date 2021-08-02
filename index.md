@@ -358,36 +358,44 @@ mkdir results && mv SRR* results/
 aws s3 sync results/ s3://<username>-cloud-workshop
 ```
 
-7)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.
+7) To check if we got all of our files moved to our s3 bucket we can run one final command (remember to change the `<username>` portion again here):
 
+{% include codeHeader.html %}
+```bash
+aws s3 ls s3://<username>-cloud-workshop
+```
 
-8)	In the console webpage, click the blue **Instances** button at the top of the instance launcher page
+8)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.
+
+![img50B](doc_images/img50B.jpg){:width="60%"}
+
+9)	In the console webpage, click the blue **Instances** button at the top of the instance launcher page
 
 ![img51](doc_images/img51.jpg){:width="60%"}
 
-9) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
+10) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
 
 ![img52](doc_images/img52.jpg){:width="70%"}
 
 ![img53](doc_images/img53.jpg){:width="60%"}
 
-10) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) _(top image)_ and click on your bucket name _(bottom image)_ to see its contents
+11) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) _(top image)_ and click on your bucket name _(bottom image)_ to see its contents
 
 ![img54](doc_images/img54.jpg){:width="60%"}
 
 ![img55](doc_images/img55.jpg){:width="60%"}
 
-11) You should have four files in your bucket. We need the files that end in **sorted.bam** and **sorted.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
+12) You should have four files in your bucket. We need the files that end in **sorted.bam** and **sorted.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
 
 ![img56](doc_images/img56.jpg){:width="60%"}
 
 ![img57](doc_images/img57.jpg){:width="40%"}
 
-12) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
+13) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
 
 ![img59](doc_images/img59.jpg){:width="60%"}
 
-13) If it works, you will see a green banner at the top of the new page like seen below _(top image)_. If you see this, click your bucket link under the “summary” panel _(bottom image)_ to navigate back to the main bucket page.
+14) If it works, you will see a green banner at the top of the new page like seen below _(top image)_. If you see this, click your bucket link under the “summary” panel _(bottom image)_ to navigate back to the main bucket page.
 
 ![img60](doc_images/img60.jpg){:width="60%"}
 
