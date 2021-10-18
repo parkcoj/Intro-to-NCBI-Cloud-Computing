@@ -68,23 +68,25 @@ Now that we have an S3 bucket ready, we can go see what the Athena page looks li
 
 &nbsp;
 
-2) Visiting the Athena page should prompt you with a few notifications at the top of the page. you can just click the little "X" and disregard the first two.
+2) Visiting the Athena page should prompt you with one notification about the "new Athena console experience". You can just click the "X" to remove it.
 
 &nbsp;
 
 ![img12](doc_images/img12.jpg)
 
-3) The remaining notification tells us that we need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click **Settings** in the top right of the screen
+3) To make sure Athena saves our search results in the correct S3 bucket, we need to tell it which one to use. Good thing we just made one, eh?  Click **Settings** in the top left of the screen
 
 ![img13](doc_images/img13.jpg){:width="60%"}
 
-4) Click the folder button that says **Select** *(top image)* and scroll down to find your newly created S3 bucket. Then click the black arrow button to select it and the blue **Select** button to add it *(middle image)*. Finally, click **Save** *(bottom image)*.
+4) Click the **Manage** button on the right *(1st image)* then **Browse S3** on the next page *(2nd image)* to see the list of S3 buckets in our account. Scroll to find your S3 bucket then click the radio button to the left of the name and click **Choose** in the bottom right *(3rd image)*. Finally, click **Save** *(4th image)*.
 
 ![img14](doc_images/img14.jpg){:width="60%"}
 
 ![img15](doc_images/img15.jpg){:width="60%"}
 
 ![img16](doc_images/img16.jpg){:width="60%"}
+
+![img16_1](doc_images/img16_1.jpg){:width=60%"}
 
 Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
 
@@ -94,13 +96,15 @@ Now that we can save Athena results we can run some searches! The very last step
 
 These steps aren't necessary to do before every Athena query, but they are useful when exploring a new table.
 
-1) Click the dropdown menu underneath the **Database** section and click **sra** to set it as the active database. If you do not see this as an option, refresh the page and check again.
+1) Navigate back to the **Editor** tab and click the dropdown menu underneath the **Database** section and click **sra** to set it as the active database. If you do not see this as an option, refresh the page and check again.
 
 ![img17](doc_images/img17.jpg){:width="80%"}
 
 2) Look at the **Tables** section and click the ellipses next to the **metadata** table, then click **Preview Table** to automatically run a sample command which will give you 10 random lines from the table
 
 ![img18](doc_images/img18.jpg){:width="80%"}
+
+> You can also click the **+** button next to the Metadata name to see a list of all the columns in the table.
 
 > For SRA based tables, you can also visit the following link to get the definition of each column in the table: [https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/)
 
@@ -123,7 +127,7 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 ![img21](doc_images/img21.jpg){:width="60%"}
 
-> Fun fact: If you navigate back to **New Query 2** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
+> Fun fact: If you navigate back to **Query 1** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
 
 4) Copy/paste the following command into the query box in Athena _(circled in yellow)_, then click the blue **Run Query** button _(circled in red)_.
 
@@ -140,7 +144,7 @@ WHERE sra_study = 'SRP125431'
 
 ![img23](doc_images/img23.jpg){:width="80%"}
 
-6) Click the **Download to CSV** button on the top-right corner of the results panel to download your file to your computer. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.
+6) Click the **Download results** button on the top-right corner of the results panel to download your file to your computer in CSV format. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.
 
 ![img24](doc_images/img24.jpg){:width="60%"}
 
