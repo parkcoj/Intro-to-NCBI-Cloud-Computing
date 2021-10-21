@@ -18,7 +18,7 @@
 {"@type":"WebSite","headline":"Objective 0 - Logging in &amp; Navigating the AWS Console Page","url":"http://localhost:4000/","name":"Introduction to NCBI Cloud Computing","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=38647f0c95271f99ecbba3463e5399ef1ab3b5bf">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5e37484b3efce60727c4add384d3521b536c0ac6">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     
@@ -31,14 +31,14 @@
   <body>
     
       <header>
-        <h1>Intro-to-NCBI-cloud-computing</h1>
+        <h1>Introduction to NCBI Cloud Computing</h1>
+	<span id='logo'></span>
+	<img src='doc_images/NCBI_white_fit.png', alt='NCBI', width='300px'>
       </header>
 
       <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/parkcoj/Intro-to-NCBI-cloud-computing" class="button fork"><strong>View On GitHub</strong></a>
-        <a href="https://parkcoj.github.io/Intro-to-NCBI-Cloud-Computing/slides.pdf" class="button slides" target="_blank"><strong>Download Slides</strong></a>
+        <a href="https://github.com/parkcoj/Intro-to-NCBI-Cloud-Computing" class="button fork">View On GitHub</a>
+        <a href="https://parkcoj.github.io/Intro-to-NCBI-Cloud-Computing/slides.pdf" class="button slides" target="_blank">Download Slides</a>
         
       </div><!-- end banner -->
 
@@ -59,7 +59,7 @@
 
 <p>3) Click <strong>Sign-In</strong> under the AWS Console Sign-In column on the new page</p>
 
-<p><img src="/doc_images/img3.jpg" alt="img3" width="60%" /></p>
+<p><img src="/doc_images/img3.jpg" alt="img3" /></p>
 
 <p>4) If you see <strong>AWS Management Console</strong> like the screenshot below, you have successfully logged in to the AWS Console!</p>
 
@@ -98,6 +98,10 @@
 
 <p>4) Scroll down to the <strong>Block Public Access settings for this bucket</strong> section. Deselect the blue checkbox at the top and select the bottom 2 checkboxes. Then check the box underneath the warning symbol to acknowledge your changes to the public access settings</p>
 
+<blockquote>
+  <p><strong>NOTE:</strong> We turn on Public Access so that we can upload our files from the bucket directly to public websites like NCBI (<em>e.g.</em>, we will be uploading result files from our bucket to the Genome Data Viewer later today). By default, you should keep your bucket from Public Access unless you explicitly need it</p>
+</blockquote>
+
 <p><img src="/doc_images/img8.jpg" alt="img8" width="60%" /></p>
 
 <p>5) Ignore the rest of the settings and scroll to the bottom of the page. Click the orange <strong>Create Bucket</strong> button.</p>
@@ -118,23 +122,25 @@
 
 <p> </p>
 
-<p>2) Visiting the Athena page should prompt you with a few notifications at the top of the page. you can just click the little “X” and disregard the first two.</p>
+<p>2) Visiting the Athena page should prompt you with one notification about the “new Athena console experience”. You can just click the “X” to remove it.</p>
 
 <p> </p>
 
 <p><img src="/doc_images/img12.jpg" alt="img12" /></p>
 
-<p>3) The remaining notification tells us that we need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click <strong>Settings</strong> in the top right of the screen</p>
+<p>3) To make sure Athena saves our search results in the correct S3 bucket, we need to tell it which one to use. Good thing we just made one, eh?  Click <strong>Settings</strong> in the top left of the screen</p>
 
 <p><img src="/doc_images/img13.jpg" alt="img13" width="60%" /></p>
 
-<p>4) Click the folder button that says <strong>Select</strong> <em>(top image)</em> and scroll down to find your newly created S3 bucket. Then click the black arrow button to select it and the blue <strong>Select</strong> button to add it <em>(middle image)</em>. Finally, click <strong>Save</strong> <em>(bottom image)</em>.</p>
+<p>4) Click the <strong>Manage</strong> button on the right <em>(1st image)</em> then <strong>Browse S3</strong> on the next page <em>(2nd image)</em> to see the list of S3 buckets in our account. Scroll to find your S3 bucket then click the radio button to the left of the name and click <strong>Choose</strong> in the bottom right <em>(3rd image)</em>. Finally, click <strong>Save</strong> <em>(4th image)</em>.</p>
 
 <p><img src="/doc_images/img14.jpg" alt="img14" width="60%" /></p>
 
 <p><img src="/doc_images/img15.jpg" alt="img15" width="60%" /></p>
 
 <p><img src="/doc_images/img16.jpg" alt="img16" width="60%" /></p>
+
+<p><img src="/doc_images/img16_1.jpg" alt="img16_1" /></p>
 
 <p>Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.</p>
 
@@ -146,13 +152,17 @@
 
 <p>These steps aren’t necessary to do before every Athena query, but they are useful when exploring a new table.</p>
 
-<p>1) Click the dropdown menu underneath the <strong>Database</strong> section and click <strong>sra</strong> to set it as the active database. If you do not see this as an option, refresh the page and check again.</p>
+<p>1) Navigate back to the <strong>Editor</strong> tab and click the dropdown menu underneath the <strong>Database</strong> section and click <strong>sra</strong> to set it as the active database. If you do not see this as an option, refresh the page and check again.</p>
 
 <p><img src="/doc_images/img17.jpg" alt="img17" width="80%" /></p>
 
 <p>2) Look at the <strong>Tables</strong> section and click the ellipses next to the <strong>metadata</strong> table, then click <strong>Preview Table</strong> to automatically run a sample command which will give you 10 random lines from the table</p>
 
 <p><img src="/doc_images/img18.jpg" alt="img18" width="80%" /></p>
+
+<blockquote>
+  <p>You can also click the <strong>+</strong> button next to the Metadata name to see a list of all the columns in the table.</p>
+</blockquote>
 
 <blockquote>
   <p>For SRA based tables, you can also visit the following link to get the definition of each column in the table: <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/">https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/</a></p>
@@ -182,15 +192,19 @@
 <p><img src="/doc_images/img21.jpg" alt="img21" width="60%" /></p>
 
 <blockquote>
-  <p>Fun fact: If you navigate back to <strong>New Query 2</strong> you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.</p>
+  <p>Fun fact: If you navigate back to <strong>Query 1</strong> you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.</p>
 </blockquote>
 
 <p>4) Copy/paste the following command into the query box in Athena <em>(circled in yellow)</em>, then click the blue <strong>Run Query</strong> button <em>(circled in red)</em>.</p>
 
-<pre><code class="language-SQL">SELECT *
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT *
 FROM "sra"."metadata"
 WHERE sra_study = 'SRP125431'
-</code></pre>
+</code></pre></div></div>
 
 <p><img src="/doc_images/img22.jpg" alt="img22" width="60%" /></p>
 
@@ -198,7 +212,7 @@ WHERE sra_study = 'SRP125431'
 
 <p><img src="/doc_images/img23.jpg" alt="img23" width="80%" /></p>
 
-<p>6) Click the <strong>Download to CSV</strong> button on the top-right corner of the results panel to download your file to your computer. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.</p>
+<p>6) Click the <strong>Download results</strong> button on the top-right corner of the results panel to download your file to your computer in CSV format. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.</p>
 
 <p><img src="/doc_images/img24.jpg" alt="img24" width="60%" /></p>
 
@@ -262,11 +276,19 @@ WHERE sra_study = 'SRP125431'
 
 <p><img src="/doc_images/img39.jpg" alt="img39" width="80%" /></p>
 
+<blockquote>
+  <p><strong>NOTE:</strong> This “default” network setting configuration leaves the instance open to public access. Typically you will want to restrict this to only trusted IP addresses, but for the purposes of the workshop we keep this open so there is no need to troubleshoot network issues. To balance this security flaw, we will restrict access to our instances with another instance feature in a few more steps.</p>
+</blockquote>
+
 <p>12) Click <strong>Review and Launch</strong> in the bottom right of the screen</p>
 
 <p><img src="/doc_images/img40.jpg" alt="img40" width="60%" /></p>
 
 <p>13) On page <strong>Step 7: Review and Launch</strong> – You should see two warnings at the top of the screen denoted by the symbol below. You can disregard these.</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible, which is discussed in the above “NOTE”.</p>
+</blockquote>
 
 <p><img src="/doc_images/img41.jpg" alt="img41" width="60%" /></p>
 
@@ -276,11 +298,11 @@ WHERE sra_study = 'SRP125431'
 
 <p>15)	On the pop-up menu – change the first dropdown menu to <strong>Proceed without a key pair</strong> and check the box below it to acknowledge the change. Finally, click <strong>Launch Instances</strong> in the bottom right of the popup.</p>
 
-<p><img src="/doc_images/img43.jpg" alt="img43" width="60%" /></p>
-
 <blockquote>
-  <p><strong>NOTE:</strong> Key pairs are used to access the remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop.</p>
+  <p><strong>NOTE:</strong> Key pairs are used to access this remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop. Additionally, by disabling the key pairs we also prevent public access to the instance. (This is how we will secure our instances for the workshop)</p>
 </blockquote>
+
+<p><img src="/doc_images/img43.jpg" alt="img43" width="60%" /></p>
 
 <p>16)	On the <strong>Launch Status</strong> page – Click <strong>View Instances</strong> in the bottom right</p>
 
@@ -314,34 +336,66 @@ WHERE sra_study = 'SRP125431'
 
 <p>1) First we need to update the pre-installed software in our terminal. Copy/paste the following command into your terminal, then hit <strong>Enter</strong></p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
 </code></pre></div></div>
 
 <p>2) To download magicBLAST, copy/paste the following command into your terminal, then hit <strong>Enter</strong></p>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o</span> magicblast.tar.gz https://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.6.0-x64-linux.tar.gz
 </code></pre></div></div>
 
 <p>3) We also need to unpack the software so we can run it. Run the following command to do that</p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar</span> <span class="nt">-xvzf</span> magicblast.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> <span class="nt">-R</span> 755 ncbi-magicblast-1.6.0/
 </code></pre></div></div>
 
 <p>4) Next, we need to install samtools. Run the following command below to do that.</p>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> samtools
 </code></pre></div></div>
 
 <p>5) Finally, we need to install the AWS command line interface. Run the following commands to do that</p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> unzip
 </code></pre></div></div>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o</span> awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
 </code></pre></div></div>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip awscliv2.zip
 </code></pre></div></div>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> ./aws/install
 </code></pre></div></div>
@@ -354,6 +408,10 @@ B.	The accession numbers for our reads – <em>Will be solved with Step 2 below<
 
 <p>1)	Based on the information from the manuscript, we know that the deleted region in the genome is on Chromosome 7. In NCBI, the accession number for this sequence is <strong>NC_000007</strong> so we can download this sequence to our remote computer and use it as the reference sequence for our alignment. Download the sequence using the following command.</p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o</span> chr7.fa <span class="s1">'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=NC_000007&amp;rettype=fasta'</span>
 </code></pre></div></div>
 
@@ -363,17 +421,41 @@ B.	The accession numbers for our reads – <em>Will be solved with Step 2 below<
 
 <p>3) It looks like <strong>SRR6314034</strong> is the ID we want! To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.</p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./ncbi-magicblast-1.6.0/bin/magicblast <span class="nt">-subject</span> chr7.fa <span class="nt">-sra</span> SRR6314034 <span class="nt">-out</span> SRR6314034.sam
 </code></pre></div></div>
 
 <p>4) Next, we need to format the output files so that we can use them in Genome Data Viewer. Run the following samtools commands to do this. it will run each samtools command in order automatically. Like above, if NOTHING happened after hitting enter, then it worked!</p>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>samtools view <span class="nt">-S</span> <span class="nt">-b</span> SRR6314034.sam <span class="o">&gt;</span> SRR6314034.bam
-samtools <span class="nb">sort </span>SRR6314034.bam <span class="nt">-o</span> SRR6314034.sorted.bam
-samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
+</code></pre></div></div>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>samtools <span class="nb">sort </span>SRR6314034.bam <span class="nt">-o</span> SRR6314034.sorted.bam
+</code></pre></div></div>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
 </code></pre></div></div>
 
 <p>5) Now we’ll move all these results files to a single folder so we can keep track of them</p>
+
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>results <span class="o">&amp;&amp;</span> <span class="nb">mv </span>SRR<span class="k">*</span> results/
 </code></pre></div></div>
@@ -384,38 +466,53 @@ samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
   <p><strong>REMEMBER:</strong> You will need to replace the <code class="language-plaintext highlighter-rouge">&lt;username&gt;</code> piece of the command with your own login username to make it match your S3 bucket name. So copy/paste the command into your terminal, then use the arrow keys to move your cursor back through the string and change the name to your own bucket.</p>
 </blockquote>
 
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 <span class="nb">sync </span>results/ s3://&lt;username&gt;-cloud-workshop
 </code></pre></div></div>
 
-<p>7)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.</p>
+<p>7) To check if we got all of our files moved to our s3 bucket we can run one final command (remember to change the <code class="language-plaintext highlighter-rouge">&lt;username&gt;</code> portion again here):</p>
 
-<p>8)	In the console webpage, click the blue <strong>Instances</strong> button at the top of the instance launcher page</p>
+<div class="code-header">
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 <span class="nb">ls </span>s3://&lt;username&gt;-cloud-workshop
+</code></pre></div></div>
+
+<p>8)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.</p>
+
+<p><img src="/doc_images/img50B.jpg" alt="img50B" width="60%" /></p>
+
+<p>9)	In the console webpage, click the blue <strong>Instances</strong> button at the top of the instance launcher page</p>
 
 <p><img src="/doc_images/img51.jpg" alt="img51" width="60%" /></p>
 
-<p>9) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance <em>(top image)</em> then click the <strong>Instance State</strong> drop-down menu and select <strong>Stop Instance</strong> <em>(bottom image)</em>.</p>
+<p>10) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance <em>(top image)</em> then click the <strong>Instance State</strong> drop-down menu and select <strong>Stop Instance</strong> <em>(bottom image)</em>.</p>
 
 <p><img src="/doc_images/img52.jpg" alt="img52" width="70%" /></p>
 
 <p><img src="/doc_images/img53.jpg" alt="img53" width="60%" /></p>
 
-<p>10) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) <em>(top image)</em> and click on your bucket name <em>(bottom image)</em> to see its contents</p>
+<p>11) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) <em>(top image)</em> and click on your bucket name <em>(bottom image)</em> to see its contents</p>
 
 <p><img src="/doc_images/img54.jpg" alt="img54" width="60%" /></p>
 
 <p><img src="/doc_images/img55.jpg" alt="img55" width="60%" /></p>
 
-<p>11) You should have four files in your bucket. We need the files that end in <strong>sorted.bam</strong> and <strong>sorted.bam.bai</strong>. Check the box next to each of those files <em>(top image)</em> then use the Actions drop-down menu and select <strong>Make Public</strong> at the very bottom <em>(bottom image)</em></p>
+<p>12) You should have four files in your bucket. We need the files that end in <strong>sorted.bam</strong> and <strong>sorted.bam.bai</strong>. Check the box next to each of those files <em>(top image)</em> then use the Actions drop-down menu and select <strong>Make Public</strong> at the very bottom <em>(bottom image)</em></p>
 
 <p><img src="/doc_images/img56.jpg" alt="img56" width="60%" /></p>
 
 <p><img src="/doc_images/img57.jpg" alt="img57" width="40%" /></p>
 
-<p>12) On the new page, click the orange <strong>Make Public</strong> button in the bottom right of the page to make the files publicly accessible</p>
+<p>13) On the new page, click the orange <strong>Make Public</strong> button in the bottom right of the page to make the files publicly accessible</p>
 
 <p><img src="/doc_images/img59.jpg" alt="img59" width="60%" /></p>
 
-<p>13) If it works, you will see a green banner at the top of the new page like seen below <em>(top image)</em>. If you see this, click your bucket link under the “summary” panel <em>(bottom image)</em> to navigate back to the main bucket page.</p>
+<p>14) If it works, you will see a green banner at the top of the new page like seen below <em>(top image)</em>. If you see this, click your bucket link under the “summary” panel <em>(bottom image)</em> to navigate back to the main bucket page.</p>
 
 <p><img src="/doc_images/img60.jpg" alt="img60" width="60%" /></p>
 
@@ -745,5 +842,6 @@ Try to find the region of the chromosome that our reads aligned to:</p>
     </div>
 
     
+    <script src="/assets/scripts/copyCode.js"></script>
   </body>
 </html>

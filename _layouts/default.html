@@ -19,14 +19,13 @@
     
       <header>
         <h1>{{ default: site.github.repository_name | default: site.title | page.title }}</h1>
+	<span id='logo'></span>
+	<img src='doc_images/NCBI_white_fit.png', alt='NCBI', width='300px'>
       </header>
 
       <div id="banner">
-        <span id="logo"></span>
-
-        <img src="doc_images/NCBI_white_fit.png" alt="NCBI", height='50px', width='300px'>
-        <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
-        <a href="https://parkcoj.github.io/Intro-to-NCBI-Cloud-Computing/slides.pdf" class="button slides" target="_blank"><strong>Download Slides</strong></a>
+        <a href="{{ site.github.repository_url }}" class="button fork">View On GitHub</a>
+        <a href="https://parkcoj.github.io/Intro-to-NCBI-Cloud-Computing/slides.pdf" class="button slides" target="_blank">Download Slides</a>
         {% if site.show_downloads %}
           <div class="downloads">
             <span>Downloads:</span>

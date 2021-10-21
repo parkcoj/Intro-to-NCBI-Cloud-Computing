@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Leap Day for GitHub Pages
 by Matt Graham
@@ -311,19 +312,20 @@ footer { width: 180px; position: fixed; left: 50%; margin-left: -530px; bottom: 
 @media print, screen and (max-height: 680px) { footer { text-align: center; margin: 20px auto; position: relative; left: auto; bottom: auto; width: auto; } }
 @media print, screen and (max-height: 480px) { nav { display: none; }
   footer { text-align: center; margin: 20px auto; position: relative; left: auto; bottom: auto; width: auto; } }
-header { background: #0071BC; }
-header h1 { text-shadow: 0px 2px 0px #002455; font: 45px/58px Merriweather; margin: 10px; }
+header { background: #205493; padding: 0px 0px 0px 0px; }
+header h1 { position: absolute; text-shadow: 0px 2px 0px #002455; font: 20px/40px Roboto; bottom: 20px; right: 10px; }
+header img { position: absolute; bottom: 20px; left: 10px; }
 
-body { background: #DFDFE1; color: #080808; font: 15px/22px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; }
+body { background: #ffffff; color: #080808; font: 16px/24px 'Roboto'; font-weight: 400; }
 
-section { width: 800px; }
+section { width: 1000px; }
 
-#banner { background: #2E8540; border: #226430; right: 35%; }
-#banner .button { border: 1px solid #1E562A; background: linear-gradient(#3DB156, #2E8540); color: #f3f3f3; }
-#banner .button:hover { background: linear-gradient(#3DB156, #3DB156); background-color: #5DC774; }
-#banner .slides { position: absolute; left: 100%; margin-left: -325px; padding: 10px 12px; margin-top: 6px; line-height: 14px; font-size: 14px; background-color: #FFE788; }
+#banner { background: #AEB0B5; border: #212121; right: 35%; top: 65px; }
+#banner .button { border: 0px solid #205493; background: #205493; color: #ffffff; border-radius: 4px; }
+#banner .button:hover { border: 0px solid #205493; background: #112e51; color: #ffffff; }
+#banner .slides { position: absolute; left: 100%; margin-left: -325px; padding: 10px 12px; margin-top: 6px; line-height: 14px; font-size: 14px; }
 
-strong { font-weight: bolder; color: #080808; }
+strong { font-weight: bolder; }
 
 blockquote { border-left: 2px solid #2E8540; margin: 0; padding: 0 0 0 20px; font-style: italic; }
 
@@ -331,3 +333,11 @@ ul { list-style-image: none; }
 
 nav { position: fixed; overflow: scroll; max-height: 600px; text-align: left; }
 nav ul a { color: #333; }
+
+.code-header { display: flex; justify-content: flex-end; }
+
+.copy-code-button { display: grid; grid-auto-flow: column; align-items: center; grid-column-gap: 4px; border: none; cursor: pointer; font-size: 1rem; padding: 4px 8px; }
+.copy-code-button::before { content: "Copy"; }
+.copy-code-button::after { content: "📋"; display: block; }
+.copy-code-button.copied::before { content: "Copied!"; }
+.copy-code-button.copied::after { content: "✔️"; }

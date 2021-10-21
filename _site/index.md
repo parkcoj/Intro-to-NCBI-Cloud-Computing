@@ -11,7 +11,7 @@
 
 3) Click **Sign-In** under the AWS Console Sign-In column on the new page
 
-![img3](doc_images/img3.jpg){:width="60%"}
+![img3](doc_images/img3.jpg)
 
 4) If you see **AWS Management Console** like the screenshot below, you have successfully logged in to the AWS Console!
 
@@ -46,6 +46,8 @@ For this workshop, use the format `<username>-cloud-workshop` where `<username>`
 
 4) Scroll down to the **Block Public Access settings for this bucket** section. Deselect the blue checkbox at the top and select the bottom 2 checkboxes. Then check the box underneath the warning symbol to acknowledge your changes to the public access settings
 
+>**NOTE:** We turn on Public Access so that we can upload our files from the bucket directly to public websites like NCBI (*e.g.*, we will be uploading result files from our bucket to the Genome Data Viewer later today). By default, you should keep your bucket from Public Access unless you explicitly need it
+
 ![img8](doc_images/img8.jpg){:width="60%"}
 
 5) Ignore the rest of the settings and scroll to the bottom of the page. Click the orange **Create Bucket** button.
@@ -66,23 +68,25 @@ Now that we have an S3 bucket ready, we can go see what the Athena page looks li
 
 &nbsp;
 
-2) Visiting the Athena page should prompt you with a few notifications at the top of the page. you can just click the little "X" and disregard the first two.
+2) Visiting the Athena page should prompt you with one notification about the "new Athena console experience". You can just click the "X" to remove it.
 
 &nbsp;
 
 ![img12](doc_images/img12.jpg)
 
-3) The remaining notification tells us that we need to tell Athena which S3 bucket we want all of our search results to be stored in. Good thing we just made one, eh?  Click **Settings** in the top right of the screen
+3) To make sure Athena saves our search results in the correct S3 bucket, we need to tell it which one to use. Good thing we just made one, eh?  Click **Settings** in the top left of the screen
 
 ![img13](doc_images/img13.jpg){:width="60%"}
 
-4) Click the folder button that says **Select** *(top image)* and scroll down to find your newly created S3 bucket. Then click the black arrow button to select it and the blue **Select** button to add it *(middle image)*. Finally, click **Save** *(bottom image)*.
+4) Click the **Manage** button on the right *(1st image)* then **Browse S3** on the next page *(2nd image)* to see the list of S3 buckets in our account. Scroll to find your S3 bucket then click the radio button to the left of the name and click **Choose** in the bottom right *(3rd image)*. Finally, click **Save** *(4th image)*.
 
 ![img14](doc_images/img14.jpg){:width="60%"}
 
 ![img15](doc_images/img15.jpg){:width="60%"}
 
 ![img16](doc_images/img16.jpg){:width="60%"}
+
+![img16_1](doc_images/img16_1.jpg){:width=60%"}
 
 Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
 
@@ -92,13 +96,15 @@ Now that we can save Athena results we can run some searches! The very last step
 
 These steps aren't necessary to do before every Athena query, but they are useful when exploring a new table.
 
-1) Click the dropdown menu underneath the **Database** section and click **sra** to set it as the active database. If you do not see this as an option, refresh the page and check again.
+1) Navigate back to the **Editor** tab and click the dropdown menu underneath the **Database** section and click **sra** to set it as the active database. If you do not see this as an option, refresh the page and check again.
 
 ![img17](doc_images/img17.jpg){:width="80%"}
 
 2) Look at the **Tables** section and click the ellipses next to the **metadata** table, then click **Preview Table** to automatically run a sample command which will give you 10 random lines from the table
 
 ![img18](doc_images/img18.jpg){:width="80%"}
+
+> You can also click the **+** button next to the Metadata name to see a list of all the columns in the table.
 
 > For SRA based tables, you can also visit the following link to get the definition of each column in the table: [https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/)
 
@@ -121,11 +127,12 @@ These steps aren't necessary to do before every Athena query, but they are usefu
 
 ![img21](doc_images/img21.jpg){:width="60%"}
 
-> Fun fact: If you navigate back to **New Query 2** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
+> Fun fact: If you navigate back to **Query 1** you should still see the result table for that query! Athena will save that view for you until you run a new query in that tab or close the webpage.
 
 4) Copy/paste the following command into the query box in Athena _(circled in yellow)_, then click the blue **Run Query** button _(circled in red)_.
 
-```SQL
+{% include codeHeader.html %}
+```
 SELECT *
 FROM "sra"."metadata"
 WHERE sra_study = 'SRP125431'
@@ -137,7 +144,7 @@ WHERE sra_study = 'SRP125431'
 
 ![img23](doc_images/img23.jpg){:width="80%"}
 
-6) Click the **Download to CSV** button on the top-right corner of the results panel to download your file to your computer. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.
+6) Click the **Download results** button on the top-right corner of the results panel to download your file to your computer in CSV format. You should be able to open this in Microsoft Excel, Google Sheets, or a regular text editor (e.g., Notepad for PC, TextEdit for Mac). We will review this file later, so keep it handy.
 
 ![img24](doc_images/img24.jpg){:width="60%"}
 
@@ -199,11 +206,15 @@ WHERE sra_study = 'SRP125431'
 
 ![img39](doc_images/img39.jpg){:width="80%"}
 
+> **NOTE:** This "default" network setting configuration leaves the instance open to public access. Typically you will want to restrict this to only trusted IP addresses, but for the purposes of the workshop we keep this open so there is no need to troubleshoot network issues. To balance this security flaw, we will restrict access to our instances with another instance feature in a few more steps.
+
 12) Click **Review and Launch** in the bottom right of the screen
 
 ![img40](doc_images/img40.jpg){:width="60%"}
 
 13) On page **Step 7: Review and Launch** – You should see two warnings at the top of the screen denoted by the symbol below. You can disregard these.
+
+> **NOTE:** The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible, which is discussed in the above "NOTE".
 
 ![img41](doc_images/img41.jpg){:width="60%"}
 
@@ -213,9 +224,9 @@ WHERE sra_study = 'SRP125431'
 
 15)	On the pop-up menu – change the first dropdown menu to **Proceed without a key pair** and check the box below it to acknowledge the change. Finally, click **Launch Instances** in the bottom right of the popup.
 
-![img43](doc_images/img43.jpg){:width="60%"}
+> **NOTE:** Key pairs are used to access this remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop. Additionally, by disabling the key pairs we also prevent public access to the instance. (This is how we will secure our instances for the workshop)
 
-> **NOTE:** Key pairs are used to access the remote computer using other methods, like SSH. We won’t be using these other methods so we can skip the key pairs here without affecting our ability to do the workshop.
+![img43](doc_images/img43.jpg){:width="60%"}
 
 16)	On the **Launch Status** page – Click **View Instances** in the bottom right
 
@@ -247,42 +258,50 @@ Before we can do our analyses, we need to install some software into our new rem
 
 1) First we need to update the pre-installed software in our terminal. Copy/paste the following command into your terminal, then hit **Enter**
 
+{% include codeHeader.html %}
 ```bash
 sudo apt-get update
 ```
 
 2) To download magicBLAST, copy/paste the following command into your terminal, then hit **Enter**
 
+{% include codeHeader.html %}
 ```bash
 curl -o magicblast.tar.gz https://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.6.0-x64-linux.tar.gz
 ```
 
 3) We also need to unpack the software so we can run it. Run the following command to do that
 
+{% include codeHeader.html %}
 ```bash
 tar -xvzf magicblast.tar.gz && chmod -R 755 ncbi-magicblast-1.6.0/
 ```
 
 4) Next, we need to install samtools. Run the following command below to do that.
 
+{% include codeHeader.html %}
 ```bash
 sudo apt install -y samtools
 ```
 
 5) Finally, we need to install the AWS command line interface. Run the following commands to do that
 
+{% include codeHeader.html %}
 ```bash
 sudo apt install -y unzip
 ```
 
+{% include codeHeader.html %}
 ```bash
 curl -o awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
 ```
 
+{% include codeHeader.html %}
 ```bash
 unzip awscliv2.zip
 ```
 
+{% include codeHeader.html %}
 ```bash
 sudo ./aws/install
 ```
@@ -295,6 +314,7 @@ B.	The accession numbers for our reads – _Will be solved with Step 2 below_
 
 1)	Based on the information from the manuscript, we know that the deleted region in the genome is on Chromosome 7. In NCBI, the accession number for this sequence is **NC_000007** so we can download this sequence to our remote computer and use it as the reference sequence for our alignment. Download the sequence using the following command.
 
+{% include codeHeader.html %}
 ```bash
 curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000007&rettype=fasta'
 ```
@@ -305,20 +325,31 @@ curl -o chr7.fa 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nu
 
 3) It looks like **SRR6314034** is the ID we want! To run MagicBLAST on our selected accession ID, run the following command. This should take ~1 minute to run. You’ll know it worked okay if the command runs with NO output.
 
+{% include codeHeader.html %}
 ```bash
 ./ncbi-magicblast-1.6.0/bin/magicblast -subject chr7.fa -sra SRR6314034 -out SRR6314034.sam
 ```
 
 4) Next, we need to format the output files so that we can use them in Genome Data Viewer. Run the following samtools commands to do this. it will run each samtools command in order automatically. Like above, if NOTHING happened after hitting enter, then it worked!
 
+{% include codeHeader.html %}
 ```bash
 samtools view -S -b SRR6314034.sam > SRR6314034.bam
+```
+
+{% include codeHeader.html %}
+```bash
 samtools sort SRR6314034.bam -o SRR6314034.sorted.bam
+```
+
+{% include codeHeader.html %}
+```bash
 samtools index SRR6314034.sorted.bam SRR6314034.sorted.bam.bai
 ```
 
 5) Now we'll move all these results files to a single folder so we can keep track of them
 
+{% include codeHeader.html %}
 ```bash
 mkdir results && mv SRR* results/
 ```
@@ -327,40 +358,49 @@ mkdir results && mv SRR* results/
 
 > **REMEMBER:** You will need to replace the `<username>` piece of the command with your own login username to make it match your S3 bucket name. So copy/paste the command into your terminal, then use the arrow keys to move your cursor back through the string and change the name to your own bucket.
 
+{% include codeHeader.html %}
 ```bash
 aws s3 sync results/ s3://<username>-cloud-workshop
 ```
 
-7)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.
+7) To check if we got all of our files moved to our s3 bucket we can run one final command (remember to change the `<username>` portion again here):
 
+{% include codeHeader.html %}
+```bash
+aws s3 ls s3://<username>-cloud-workshop
+```
 
-8)	In the console webpage, click the blue **Instances** button at the top of the instance launcher page
+8)	We should now be done with our remote computer (aka: EC2 instance). Go ahead and close the browser tab your instance is open in.
+
+![img50B](doc_images/img50B.jpg){:width="60%"}
+
+9)	In the console webpage, click the blue **Instances** button at the top of the instance launcher page
 
 ![img51](doc_images/img51.jpg){:width="60%"}
 
-9) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
+10) We don’t want to leave an instance on while not using it, because it costs money to keep it active. So, let’s shut it down, but not delete it, just in case we want to use it later. Check the box next to your instance _(top image)_ then click the **Instance State** drop-down menu and select **Stop Instance** _(bottom image)_.
 
 ![img52](doc_images/img52.jpg){:width="70%"}
 
 ![img53](doc_images/img53.jpg){:width="60%"}
 
-10) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) _(top image)_ and click on your bucket name _(bottom image)_ to see its contents
+11) Finally, we need to check on the files in our S3 bucket and make them publicly available to upload the files to GDV later. Navigate back to the S3 page (use the search bar at the top of the console page) _(top image)_ and click on your bucket name _(bottom image)_ to see its contents
 
 ![img54](doc_images/img54.jpg){:width="60%"}
 
 ![img55](doc_images/img55.jpg){:width="60%"}
 
-11) You should have four files in your bucket. We need the files that end in **sorted.bam** and **sorted.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
+12) You should have four files in your bucket. We need the files that end in **sorted.bam** and **sorted.bam.bai**. Check the box next to each of those files _(top image)_ then use the Actions drop-down menu and select **Make Public** at the very bottom _(bottom image)_
 
 ![img56](doc_images/img56.jpg){:width="60%"}
 
 ![img57](doc_images/img57.jpg){:width="40%"}
 
-12) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
+13) On the new page, click the orange **Make Public** button in the bottom right of the page to make the files publicly accessible
 
 ![img59](doc_images/img59.jpg){:width="60%"}
 
-13) If it works, you will see a green banner at the top of the new page like seen below _(top image)_. If you see this, click your bucket link under the “summary” panel _(bottom image)_ to navigate back to the main bucket page.
+14) If it works, you will see a green banner at the top of the new page like seen below _(top image)_. If you see this, click your bucket link under the “summary” panel _(bottom image)_ to navigate back to the main bucket page.
 
 ![img60](doc_images/img60.jpg){:width="60%"}
 

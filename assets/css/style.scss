@@ -5,43 +5,57 @@
 
 // Changes header to Blue and updates text to be cleaner looking
 header {
-  background: #0071BC;
+  background: #205493;
+  padding: 0px 0px 0px 0px;
   
 
   h1 {
+    position: absolute;
     text-shadow: 0px 2px 0px #002455;
-    font: 45px/58px Merriweather;
-    margin: 10px;
+    font: 20px/40px Roboto;
+    bottom: 20px;
+    right: 10px;
+  }
+
+  img {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+
   }
 }
 
 // Changes documentation background to be gray, and text to be darker
 body {
-  background: #DFDFE1;
+  background: #ffffff;
   color:#080808;
-  font: 16px/24px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font: 16px/24px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px/24px 'Roboto';
   font-weight:400;
 }
 
 // Increase width of text body for readability
 section {
-  width: 800px;
+  width: 1000px;
 }
 
 // Updates banner to be green with the same stylistic changes when moused over 
 #banner {
-  background: #2E8540;
-  border: #226430;
+  background: #AEB0B5;
+  border: #212121;
   right: 35%;
+  top: 65px;
   
   .button {
-    border: 1px solid #1E562A;
-    background: linear-gradient(#3DB156, #2E8540);
-    color: #f3f3f3;
+    border: 0px solid #205493;
+    background: #205493;
+    color: #ffffff;
+    border-radius: 4px;
     
     &:hover {
-      background: linear-gradient(#3DB156, #3DB156);
-      background-color: #5DC774;
+      border: 0px solid #205493;
+      background: #112e51;
+      color: #ffffff;
     } 
   }
   
@@ -53,14 +67,13 @@ section {
     margin-top: 6px;
     line-height:14px;
     font-size:14px;
-    background-color: #FFE788;
     }
 }
 
 // Makes "bold" be bolder (this may not actually work right now)
 strong {
   font-weight: bolder;
-  color:#080808;
+  // color:#080808;
 }
 
 // Changes style of the blockquote to be green and thicker
