@@ -318,12 +318,14 @@ header img { position: absolute; bottom: 20px; left: 10px; }
 
 body { background: #ffffff; color: #080808; font: 16px/24px 'Roboto'; font-weight: 400; }
 
-section { width: 1000px; }
+.wrapper { max-width: 800px; }
 
-#banner { background: #AEB0B5; border: #212121; right: 35%; top: 65px; }
-#banner .button { border: 0px solid #205493; background: #205493; color: #ffffff; border-radius: 4px; }
+section { width: 800px; background: initial; border-radius: initial; border: initial; box-shadow: initial; max-width: 800px; }
+
+#banner { position: fixed; background: #AEB0B5; border: #212121; right: 0; top: 65px; width: 400px; margin-right: 0; left: initial; }
+#banner .button { position: relative; border: 0px solid #205493; background: #205493; color: #ffffff; border-radius: 4px; left: 25px; margin-left: 0; }
 #banner .button:hover { border: 0px solid #205493; background: #112e51; color: #ffffff; }
-#banner .slides { position: absolute; left: 100%; margin-left: -325px; padding: 10px 12px; margin-top: 6px; line-height: 14px; font-size: 14px; }
+#banner .slides { left: 110px; }
 
 strong { font-weight: bolder; }
 
@@ -331,7 +333,7 @@ blockquote { border-left: 2px solid #2E8540; margin: 0; padding: 0 0 0 20px; fon
 
 ul { list-style-image: none; }
 
-nav { position: fixed; overflow: scroll; max-height: 600px; text-align: left; }
+nav { position: fixed; overflow: scroll; text-align: left; left: 0%; margin-left: 0px; width: calc(20vw); top: 100px; height: calc(100vh - 100px); }
 nav ul a { color: #333; }
 
 .code-header { display: flex; justify-content: flex-end; }
