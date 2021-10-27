@@ -1,4 +1,4 @@
-**This three hour workshop is being offered by the [NCBI Education Team](mailto:workshops@ncbi.nlm.nih.gov?subject=[GitHub]%20CSHL%20Cloud%20Workshop%20Feedback) for the CSHL Genome Informatics Meeting on November 2, 2021.**
+#### This three hour workshop is being offered by the [NCBI Education Team](mailto:workshops@ncbi.nlm.nih.gov?subject=[GitHub]%20CSHL%20Cloud%20Workshop%20Feedback) for the CSHL Genome Informatics Meeting on November 2, 2021.
 
 **Workshop Description:** As DNA sequencing becomes a commonplace tool in biological research, the need for accessible, scalable, and secure computational environments to process this deluge of data is growing. NCBI has partnered with leading cloud computing providers to provide tools and data to this growing industry. This workshop is designed for experimental biologists without cloud computing experience. While not required, it is most useful for researchers who do sequence-based research and who have some familiarity interacting with a Linux command-line.
 

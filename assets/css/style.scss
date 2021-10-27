@@ -16,7 +16,7 @@ header {
   h1 {
     background: #205493;
     color: #f3f3f3;
-    text-align: right;
+    text-align: center;
     padding: 1rem 2rem; 
     text-shadow: 0px 2px 0px #002455;
     font: 25px/45px Roboto;
@@ -69,6 +69,18 @@ header {
 body {
   font: 16px/24px 'Roboto';
   font-weight: 400;
+
+  h1 {
+    font-size: 1.35em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: large;
+  }
 }
 
 a {
