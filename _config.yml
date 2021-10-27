@@ -1,5 +1,5 @@
 title: Introduction to NCBI Cloud Computing
-remote_theme: pages-themes/leap-day@v0.2.0
+# remote_theme: pages-themes/leap-day@v0.2.0
 markdown: kramdown
-plugins:
-        - jekyll-remote-theme
+# plugins:
+#        - jekyll-remote-theme
