@@ -1,15 +1,18 @@
+@charset "UTF-8";
 * { font-family: Roboto; }
 
 header { position: fixed; width: 100%; z-index: 99; }
-header h1 { background: #205493; color: #f3f3f3; text-align: right; padding: 1rem 2rem; text-shadow: 0px 2px 0px #002455; font: 20px/40px Roboto; margin: -20px; }
+header h1 { background: #205493; color: #f3f3f3; text-align: right; padding: 1rem 2rem; text-shadow: 0px 2px 0px #002455; font: 25px/45px Roboto; margin: -20px; }
 header img { position: relative; z-index: 100; top: -30px; }
-header #banner { position: fixed; background: #AEB0B5; border: #212121; right: 0; top: 40px; width: 300px; z-index: 100; height: 50px; }
+header #banner { position: fixed; background: #AEB0B5; border: #212121; right: 0; top: 50px; width: 300px; z-index: 100; height: 50px; }
 header #banner .button { font-size: 14px; position: relative; background: #205493; border: 0 solid #205493; color: #ffffff; border-radius: 4px; height: 50px; padding: .5em; margin: 1em; top: 1em; }
 header #banner .button:hover { background: #112e51; }
-header #banner #GitHub { margin: 1.5em .5em 1.5em 1.5em; }
-header #banner #Slides { margin: 1.5em 1.5em 1.5em .5em; }
+header #banner #Slides { margin: 1.5em .5em 1.5em 1.5em; }
+header #banner #GitHub { margin: 1.5em 1.5em 1.5em .5em; }
 
-a { color: #f3f3f3; font-weight: 400; text-decoration: none; }
+body { font: 16px/24px 'Roboto'; font-weight: 400; }
+
+a { color: #376faa; font-weight: 400; text-decoration: none; }
 
 nav { position: fixed; overflow: scroll; text-align: left; width: 20%; height: calc(100vh - 100px); left: 0; top: 70px; }
 nav ul { list-style: none; list-style-image: none; height: 40px; padding: 0; float: left; margin-left: 10px; }
@@ -23,3 +26,25 @@ nav ul a:hover { color: #999; }
 .fake { position: absolute; left: 20px; top: 0; }
 
 .wrapper { padding-top: 100px; width: 650px; margin: 0 auto; position: relative; overflow: auto; z-index: 98; }
+
+section img { max-width: 90%; }
+
+blockquote { border-left: 2px solid #2E8540; margin: 0; padding: 0 0 0 20px; font-style: italic; }
+
+code { font-family: 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal; font-size: 13px; color: #efefef; text-shadow: 0px 1px 0px #000; margin: 0 4px; padding: 2 px 6px; background: #333; border-radius: 2px; }
+
+pre { padding: 8px 15px; background: #333333; border-radius: 3px; border: 1px solid #c7c7c7; overflow: auto; overflow-y: hidden; margin: 0; }
+pre code { margin: 0px; padding: 0px; }
+
+.code-header { display: flex; justify-content: flex-end; }
+
+.copy-code-button { display: grid; grid-auto-flow: column; align-items: center; grid-column-gap: 4px; border: none; cursor: pointer; font-size: 1rem; padding: 4px 8px; margin-top: 10px; }
+.copy-code-button::before { content: "Copy"; }
+.copy-code-button::after { content: "📋"; display: block; }
+.copy-code-button.copied::before { content: "Copied!"; }
+.copy-code-button.copied::after { content: "✔️"; }
+
+kbd { background-color: #fafbfc; border: 1px solid #c6cbd1; border-bottom-color: #959da5; color: #444d56; display: inline-block; font-size: 11px; line-height: 10px; padding: 3px 5px; vertical-align: middle; }
+
+@media print, screen and (max-width: 1060px) { div.wrapper { width: auto; margin: 0; }
+  nav { display: none; } }

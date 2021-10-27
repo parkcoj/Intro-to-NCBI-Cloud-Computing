@@ -1,3 +1,16 @@
+**This three hour workshop is being offered by the [NCBI Education Team](mailto:workshops@ncbi.nlm.nih.gov?subject=[GitHub]%20CSHL%20Cloud%20Workshop%20Feedback) for the CSHL Genome Informatics Meeting on November 2, 2021.**
+
+**Workshop Description:** As DNA sequencing becomes a commonplace tool in biological research, the need for accessible, scalable, and secure computational environments to process this deluge of data is growing. NCBI has partnered with leading cloud computing providers to provide tools and data to this growing industry. This workshop is designed for experimental biologists without cloud computing experience. While not required, it is most useful for researchers who do sequence-based research and who have some familiarity interacting with a Linux command-line.
+
+In this online, interactive workshop you will learn how to:
+
+- Navigate the AWS cloud console page and understand how to access and use some popular console-based tools.
+- Access and mine metadata for information in the NCBI SRA database to select an interesting dataset for further study using the AWS Athena service.
+- Retrieve SRA sequence data and perform a sequence alignment analysis using the containerized NCBI tool MagicBLAST.
+- Visualize the aligned data against the wealth of information in NCBI databases by uploading it to the NCBI Genome Data Viewer browser application.
+
+---
+
 # Objective 0 - Logging in & Navigating the AWS Console Page
 
 1) Find your credential email with subject: **NCBI Codethon Credentials**
@@ -21,6 +34,8 @@
 
 > **NOTE:** This login method is unique to the workshop. If you want to create your own account after the workshop, visit the link below and follow the steps:
 > [https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+
+---
 
 # Objective 1 - Search for the sequence reads deposited into NCBI's SRA database using AWS Athena
 
@@ -80,13 +95,13 @@ Now that we have an S3 bucket ready, we can go see what the Athena page looks li
 
 4) Click the **Manage** button on the right *(1st image)* then **Browse S3** on the next page *(2nd image)* to see the list of S3 buckets in our account. Scroll to find your S3 bucket then click the radio button to the left of the name and click **Choose** in the bottom right *(3rd image)*. Finally, click **Save** *(4th image)*.
 
-![img14](doc_images/img14.jpg){:width="60%"}
+![img14](doc_images/img14.jpg){:width="40%"}
 
 ![img15](doc_images/img15.jpg){:width="60%"}
 
 ![img16](doc_images/img16.jpg){:width="60%"}
 
-![img16_1](doc_images/img16_1.jpg){:width=60%"}
+![img16_1](doc_images/img16_1.jpg){:width=40%"}
 
 Now that we can save Athena results we can run some searches! The very last step to doing that is to import the table we want to search into Athena using another AWS service - Glue. However, to save time, this has already been done prior to the workshop by the instructor.
 
@@ -138,7 +153,7 @@ FROM "sra"."metadata"
 WHERE sra_study = 'SRP125431'
 ```
 
-![img22](doc_images/img22.jpg){:width="60%"}
+![img22](doc_images/img22.jpg){:width="40%"}
 
 5) If you see a results table with three rows like the partial screenshot below, you have successfully found your data!
 
@@ -149,6 +164,8 @@ WHERE sra_study = 'SRP125431'
 ![img24](doc_images/img24.jpg){:width="60%"}
 
 > Want to challenge yourself? Visit the supplementary text (section: **SQL challenges**) to find some questions you can build your own SQL query for. Plus, find more advanced SQL query techniques and a deeper breakdown of the SRA metadata table too!
+
+---
 
 # Objective 2 - Aligning Sequence Reads using AWS EC2 & MagicBLAST
 
@@ -216,7 +233,7 @@ WHERE sra_study = 'SRP125431'
 
 > **NOTE:** The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible, which is discussed in the above "NOTE".
 
-![img41](doc_images/img41.jpg){:width="60%"}
+![img41](doc_images/img41.jpg){:width="20%"}
 
 14) Click **Launch** in the bottom right of the screen.
 
@@ -406,6 +423,8 @@ aws s3 ls s3://<username>-cloud-workshop
 
 ![img62](doc_images/img62.jpg){:width="60%"}
 
+---
+
 # Objective 3 - Visualize Read Alignments Using Genome Data Viewer
 
 ## Importing Our Data
@@ -520,9 +539,13 @@ Oh... there’s just one? Let's check that one then.
 
 8) Just as we suspected! This region is associated with Bardet-biedl syndrome. If we wanted to, we could click on the phenotype and explore more about the condition. But that is something you need to explore on your own, because this is the end of the worksheet!
 
+---
+
 # Conclusion
 
 This concludes our exercise on navigating the AWS Cloud computing console and several of its most popular cloud services. We hope that you are motivated to take these skills and tools with you and explore how they can benefit your own research. You can find links to many useful resources to help you below.
+
+---
 
 # Useful URLs
 
@@ -554,6 +577,8 @@ This concludes our exercise on navigating the AWS Cloud computing console and se
 
 - SRA Homepage: [https://www.ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/sra)
 - SRA in the Cloud: [https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/)
+
+---
 
 # Supplementary Information
 

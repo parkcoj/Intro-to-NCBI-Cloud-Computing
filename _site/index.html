@@ -5,49 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Objective 0 - Logging in &amp; Navigating the AWS Console Page | Introduction to NCBI Cloud Computing</title>
+<title>An Introduction to NCBI Cloud Computing for Biologists</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Objective 0 - Logging in &amp; Navigating the AWS Console Page" />
+<meta property="og:title" content="An Introduction to NCBI Cloud Computing for Biologists" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Introduction to NCBI Cloud Computing" />
+<meta property="og:site_name" content="An Introduction to NCBI Cloud Computing for Biologists" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Objective 0 - Logging in &amp; Navigating the AWS Console Page" />
+<meta property="twitter:title" content="An Introduction to NCBI Cloud Computing for Biologists" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"Objective 0 - Logging in &amp; Navigating the AWS Console Page","name":"Introduction to NCBI Cloud Computing","@context":"https://schema.org"}</script>
+{"@type":"WebSite","url":"http://localhost:4000/","headline":"An Introduction to NCBI Cloud Computing for Biologists","name":"An Introduction to NCBI Cloud Computing for Biologists","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=0f04acee627aa082912f0416cb6d98011f03cb00">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7b44d72458286fbcb9b6279fdaf466a37b1ae6b6">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
-    
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
-    <![endif]-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
     
+
       <header>
-        <h1>Introduction to NCBI Cloud Computing</h1>
+        <h1>An Introduction to NCBI Cloud Computing for Biologists</h1>
 	<img src='doc_images/NCBI_white_fit.png', alt='NCBI logo', width='300px'>
         <div id="banner">
-           <a href="https://github.com/parkcoj/Intro-to-NCBI-Cloud-Computing" class="button" id='GitHub' target="_blank">View On GitHub</a>
            <a href="https://parkcoj.github.io/Intro-to-NCBI-Cloud-Computing/slides.pdf" class="button" id='Slides' target="_blank">Download Slides</a>
+           <a href="https://github.com/parkcoj/Intro-to-NCBI-Cloud-Computing" class="button" id='GitHub' target="_blank">View On GitHub</a>
         </div>
       </header>
 
 
       <div class="wrapper">
-        <div class='fake'>
-	  <nav>
-            <ul></ul>
-          </nav>
-        </div>
+	<nav>
+          <ul></ul>
+        </nav>
+
         <section> 
-	  <h1 id="objective-0---logging-in--navigating-the-aws-console-page">Objective 0 - Logging in &amp; Navigating the AWS Console Page</h1>
+	  <p><strong>This three hour workshop is being offered by the <a href="mailto:workshops@ncbi.nlm.nih.gov?subject=[GitHub]%20CSHL%20Cloud%20Workshop%20Feedback">NCBI Education Team</a> for the CSHL Genome Informatics Meeting on November 2, 2021.</strong></p>
+
+<p><strong>Workshop Description:</strong> As DNA sequencing becomes a commonplace tool in biological research, the need for accessible, scalable, and secure computational environments to process this deluge of data is growing. NCBI has partnered with leading cloud computing providers to provide tools and data to this growing industry. This workshop is designed for experimental biologists without cloud computing experience. While not required, it is most useful for researchers who do sequence-based research and who have some familiarity interacting with a Linux command-line.</p>
+
+<p>In this online, interactive workshop you will learn how to:</p>
+
+<ul>
+  <li>Navigate the AWS cloud console page and understand how to access and use some popular console-based tools.</li>
+  <li>Access and mine metadata for information in the NCBI SRA database to select an interesting dataset for further study using the AWS Athena service.</li>
+  <li>Retrieve SRA sequence data and perform a sequence alignment analysis using the containerized NCBI tool MagicBLAST.</li>
+  <li>Visualize the aligned data against the wealth of information in NCBI databases by uploading it to the NCBI Genome Data Viewer browser application.</li>
+</ul>
+
+<hr />
+
+<h1 id="objective-0---logging-in--navigating-the-aws-console-page">Objective 0 - Logging in &amp; Navigating the AWS Console Page</h1>
 
 <p>1) Find your credential email with subject: <strong>NCBI Codethon Credentials</strong></p>
 
@@ -73,6 +85,8 @@
   <p><strong>NOTE:</strong> This login method is unique to the workshop. If you want to create your own account after the workshop, visit the link below and follow the steps:
 <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/</a></p>
 </blockquote>
+
+<hr />
 
 <h1 id="objective-1---search-for-the-sequence-reads-deposited-into-ncbis-sra-database-using-aws-athena">Objective 1 - Search for the sequence reads deposited into NCBI’s SRA database using AWS Athena</h1>
 
@@ -134,7 +148,7 @@
 
 <p>4) Click the <strong>Manage</strong> button on the right <em>(1st image)</em> then <strong>Browse S3</strong> on the next page <em>(2nd image)</em> to see the list of S3 buckets in our account. Scroll to find your S3 bucket then click the radio button to the left of the name and click <strong>Choose</strong> in the bottom right <em>(3rd image)</em>. Finally, click <strong>Save</strong> <em>(4th image)</em>.</p>
 
-<p><img src="/doc_images/img14.jpg" alt="img14" width="60%" /></p>
+<p><img src="/doc_images/img14.jpg" alt="img14" width="40%" /></p>
 
 <p><img src="/doc_images/img15.jpg" alt="img15" width="60%" /></p>
 
@@ -206,7 +220,7 @@ FROM "sra"."metadata"
 WHERE sra_study = 'SRP125431'
 </code></pre></div></div>
 
-<p><img src="/doc_images/img22.jpg" alt="img22" width="60%" /></p>
+<p><img src="/doc_images/img22.jpg" alt="img22" width="40%" /></p>
 
 <p>5) If you see a results table with three rows like the partial screenshot below, you have successfully found your data!</p>
 
@@ -219,6 +233,8 @@ WHERE sra_study = 'SRP125431'
 <blockquote>
   <p>Want to challenge yourself? Visit the supplementary text (section: <strong>SQL challenges</strong>) to find some questions you can build your own SQL query for. Plus, find more advanced SQL query techniques and a deeper breakdown of the SRA metadata table too!</p>
 </blockquote>
+
+<hr />
 
 <h1 id="objective-2---aligning-sequence-reads-using-aws-ec2--magicblast">Objective 2 - Aligning Sequence Reads using AWS EC2 &amp; MagicBLAST</h1>
 
@@ -290,7 +306,7 @@ WHERE sra_study = 'SRP125431'
   <p><strong>NOTE:</strong> The first warning tells us that our instance configuration will cost us money. The second warning tells us that our network settings make our instance publicly accessible, which is discussed in the above “NOTE”.</p>
 </blockquote>
 
-<p><img src="/doc_images/img41.jpg" alt="img41" width="60%" /></p>
+<p><img src="/doc_images/img41.jpg" alt="img41" width="20%" /></p>
 
 <p>14) Click <strong>Launch</strong> in the bottom right of the screen.</p>
 
@@ -518,6 +534,8 @@ B.	The accession numbers for our reads – <em>Will be solved with Step 2 below<
 
 <p><img src="/doc_images/img62.jpg" alt="img62" width="60%" /></p>
 
+<hr />
+
 <h1 id="objective-3---visualize-read-alignments-using-genome-data-viewer">Objective 3 - Visualize Read Alignments Using Genome Data Viewer</h1>
 
 <h2 id="importing-our-data">Importing Our Data</h2>
@@ -640,9 +658,13 @@ Try to find the region of the chromosome that our reads aligned to:</p>
 
 <p>8) Just as we suspected! This region is associated with Bardet-biedl syndrome. If we wanted to, we could click on the phenotype and explore more about the condition. But that is something you need to explore on your own, because this is the end of the worksheet!</p>
 
+<hr />
+
 <h1 id="conclusion">Conclusion</h1>
 
 <p>This concludes our exercise on navigating the AWS Cloud computing console and several of its most popular cloud services. We hope that you are motivated to take these skills and tools with you and explore how they can benefit your own research. You can find links to many useful resources to help you below.</p>
+
+<hr />
 
 <h1 id="useful-urls">Useful URLs</h1>
 
@@ -684,6 +706,8 @@ Try to find the region of the chromosome that our reads aligned to:</p>
   <li>SRA Homepage: <a href="https://www.ncbi.nlm.nih.gov/sra">https://www.ncbi.nlm.nih.gov/sra</a></li>
   <li>SRA in the Cloud: <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/">https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/</a></li>
 </ul>
+
+<hr />
 
 <h1 id="supplementary-information">Supplementary Information</h1>
 
@@ -836,5 +860,8 @@ Try to find the region of the chromosome that our reads aligned to:</p>
 
         </section>
       </div>
+     
+      <script src="/assets/scripts/copyCode.js"></script>
+
   </body>
 </html>
