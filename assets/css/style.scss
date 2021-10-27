@@ -12,6 +12,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 99;
+  font: 20px/45px Roboto;
   
   h1 {
     background: #205493;
@@ -19,7 +20,6 @@ header {
     text-align: center;
     padding: 1rem 2rem; 
     text-shadow: 0px 2px 0px #002455;
-    font: 25px/45px Roboto;
     margin: -20px;
   }
 
