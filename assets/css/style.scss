@@ -1,123 +1,177 @@
 ---
 ---
 
-@import "jekyll-theme-leap-day";
+// @import "normalize";
 
 // Changes header to Blue and updates text to be cleaner looking
-header {
-  background: #205493;
-  padding: 0px 0px 0px 0px;
-  
+*{
+  font-family: Roboto;
+}
 
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  
   h1 {
-    position: absolute;
+    background: #205493;
+    color: #f3f3f3;
+    text-align: right;
+    padding: 1rem 2rem; 
     text-shadow: 0px 2px 0px #002455;
-    font: 20px/40px Roboto;
-    bottom: 20px;
-    right: 10px;
+    font: 25px/45px Roboto;
+    margin: -20px;
   }
 
   img {
-    position: absolute;
-    bottom: 20px;
-    left: 10px;
-
-  }
-}
-
-// Changes documentation background to be gray, and text to be darker
-body {
-  background: #ffffff;
-  color:#080808;
-  // font: 16px/24px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font: 16px/24px 'Roboto';
-  font-weight:400;
-
-}
-
-// Adjust text body position
-.wrapper {
-   max-width: 800px;
-   }
-
-// Increase width of text body for readability
-section {
-  width: 800px;
-  background: initial;
-  border-radius: initial;
-  border: initial;
-  box-shadow: initial;
-  max-width: 800px;
-
-}
-
-// Updates banner to be green with the same stylistic changes when moused over 
-#banner {
-  position: fixed; 
-  background: #AEB0B5;
-  border: #212121;
-  right: 0;
-  top: 65px;
-  width: 400px;
-  margin-right: 0;
-  left: initial;
-  
-  .button {
     position: relative;
-    border: 0px solid #205493;
-    background: #205493;
-    color: #ffffff;
-    border-radius: 4px;
-    left: 25px;
-    margin-left: 0;
-    
-    &:hover {
-      border: 0px solid #205493;
-      background: #112e51;
-      color: #ffffff;
-    } 
+    z-index: 100;
+    top: -30px;
   }
-  
-  .slides {
-    left: 110px;
-    // margin-left:-325px;
+
+  #banner {
+    position: fixed;
+    background: #AEB0B5;
+    border: #212121;
+    right: 0;
+    top: 50px;
+    width: 300px;
+    z-index: 100;
+    height: 50px;
+
+    .button {
+      font-size: 14px;
+      position: relative;
+      background: #205493;
+      border: 0 solid #205493;
+      color: #ffffff;
+      border-radius: 4px;
+      height: 50px;
+      padding: .5em;
+      margin: 1em;
+      top: 1em;
+
+      &:hover {
+        background: #112e51;
+      }
     }
+
+    #Slides {
+      margin: 1.5em .5em 1.5em 1.5em;
+    }
+
+    #GitHub {
+      margin: 1.5em 1.5em 1.5em .5em;
+    }
+  }
 }
 
-// Makes "bold" be bolder (this may not actually work right now)
-strong {
-  font-weight: bolder;
-  // color:#080808;
+body {
+  font: 16px/24px 'Roboto';
+  font-weight: 400;
 }
 
-// Changes style of the blockquote to be green and thicker
-blockquote {
-  border-left:2px solid #2E8540;
-  margin:0;
-  padding:0 0 0 20px;
-  font-style:italic;
+a {
+  color: #376faa;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-// Removes the yellow arrows of unordered lists
-ul{
-  list-style-image:none;
-}
 
-// Changes color of table of contents to be darker behind the gray background
+
 nav {
   position: fixed;
   overflow: scroll;
-  // max-height: 600px;
   text-align: left;
-  left: 0%;
-  margin-left: 0px;
-  width: calc(20vw);
-  top: 100px;
-  height: calc(100vh - 100px);
+  width: 20%;
+  height: calc(100vh - 100px); 
+  left: 0;
+  top: 70px;
+
   ul {
-    a {
-      color: #333;
+    list-style: none;
+    list-style-image: none;
+    height: 40px;
+    padding: 0;
+    float: left;
+    margin-left:10px;
+
+    li {
+      padding: 5px 0px;
+      line-height: 16px;
+
+      &.tag-h1 {
+
+	a {
+	  font-weight: bold;
+	  color: #333;
+        }
+      }
+
+      &.tag-h2 {
+        + .tag-h1 {
+	  margin-top: 10px;
+	}
+	margin-left: 20px;
+      }
     }
+
+    a {
+      color: #666;
+      &:hover { color: #999; }
+    }
+  }
+}
+
+.fake {
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
+
+.wrapper {
+  padding-top: 100px;
+  width: 650px;
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  z-index: 98;
+}
+
+section img {
+  max-width: 90%;
+}
+
+blockquote {
+  border-left: 2px solid #2E8540;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-style: italic;
+}
+
+code {
+  font-family: 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-size: 13px;
+  color: #efefef;
+  text-shadow: 0px 1px 0px #000;
+  margin: 0 4px;
+  padding: 2 px 6px;
+  background: #333;
+  border-radius: 2px;
+}
+
+pre {
+  padding: 8px 15px;
+  background: #333333;
+  border-radius: 3px;
+  border: 1px solid #c7c7c7;
+  overflow: auto;
+  overflow-y: hidden;
+  margin: 0;
+
+  code {
+    margin: 0px;
+    padding: 0px;
   }
 }
 
@@ -135,6 +189,7 @@ nav {
   cursor: pointer;
   font-size: 1rem;
   padding: 4px 8px;
+  margin-top: 10px;
 
   &::before {
     content: "Copy";
@@ -145,18 +200,40 @@ nav {
     display: block;
   }
 
-  // This class will be toggled via JavaScript
   &.copied {
     &::before {
       content: "Copied!";
     }
-
+    
     &::after {
       content: "✔️";
     }
   }
 }
-// Tried to add highlight for scroll. This only makes it work on click. Needs to be paired with some HTML code that I don't understand
-//.active {
-//  background-color: darkgray;
-//}
+
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+
+
+
+@media print, screen and (max-width: 1060px) {
+  
+  div.wrapper {
+    width: auto;
+    margin: 0;
+  }
+
+  nav {
+    display: none;
+  }
+}
