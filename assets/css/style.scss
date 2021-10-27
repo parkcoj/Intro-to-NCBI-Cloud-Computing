@@ -8,17 +8,35 @@
   font-family: Roboto;
 }
 
+body {
+  font: 16px/24px 'Roboto';
+  font-weight: 400;
+
+  h1 {
+    font-size: 1.35em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: large;
+  }
+}
+
 header {
   position: fixed;
   width: 100%;
   z-index: 99;
-  font: 20px/45px Roboto;
+
   
   h1 {
     background: #205493;
     color: #f3f3f3;
     text-align: center;
     padding: 1rem 2rem; 
+    font: 30px/45px Roboto;
     text-shadow: 0px 2px 0px #002455;
     margin: -20px;
   }
@@ -66,22 +84,6 @@ header {
   }
 }
 
-body {
-  font: 16px/24px 'Roboto';
-  font-weight: 400;
-
-  h1 {
-    font-size: 1.35em;
-  }
-
-  h2 {
-    font-size: 1.25em;
-  }
-
-  h4 {
-    font-size: large;
-  }
-}
 
 a {
   color: #376faa;
