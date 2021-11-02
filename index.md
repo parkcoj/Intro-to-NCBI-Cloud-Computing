@@ -13,20 +13,20 @@ In this online, interactive workshop you will learn how to:
 
 # Objective 0 - Logging in & Navigating the AWS Console Page
 
-1) Find your credential email with subject: **NCBI Codethon Credentials**
+1) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials below *(left image)* and create a new password after logging in *(right image)*
 
-![img1](doc_images/img1.jpg){:width="60%"}
+**Login**: Email prefix (everything before the '@' in your email address, all lowercase)
 
-2) Navigate to [https://codeathon.ncbi.nlm.nih.gov](https://codeathon.ncbi.nlm.nih.gov) and login using the credentials from the email *(left image)* and create a new password after logging in *(right image)*
+**Password**: Watch the zoom chat for the password!
 
 ![img2](doc_images/img2.jpg){:width="60%"}
 
 
-3) Click **Sign-In** under the AWS Console Sign-In column on the new page
+2) Click **Sign-In** under the AWS Console Sign-In column on the new page
 
 ![img3](doc_images/img3.jpg)
 
-4) If you see **AWS Management Console** like the screenshot below, you have successfully logged in to the AWS Console!
+3) If you see **AWS Management Console** like the screenshot below, you have successfully logged in to the AWS Console!
 
 ![img4](doc_images/img4.jpg){:width="60%"}
 
